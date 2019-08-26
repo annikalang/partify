@@ -4,9 +4,12 @@ Rails.application.routes.draw do
   # GET /profile users controller profile action
   get '/profile', to: 'users#profile'
   # resources for parties, only [:new, :create, :show]
-  resources :parties, only: [:new, :create, :show]
 
-  resources :playlists, only: [:show] do
+  resources :parties, only: [:new, :create, :show] do
+    resources :guests, only: [:index]
+  end
+
+  resources :playlists, only: [:show, :edit] do
     resources :tracks, only: [:index]
   end
 
