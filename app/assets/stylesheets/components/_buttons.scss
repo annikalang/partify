@@ -1,0 +1,51 @@
+.bigcolorbutton {
+  text-decoration: none;
+  font-size: 24.0px;
+  color: rgba(242,242,242,1.0);
+  text-align: center;
+  line-height: 28.0px;
+  font-family: $headers-font;
+  padding: 20px 30px;
+  margin: 150px 20px;
+  border: 1px solid rgba(242,242,242,1.0);
+  border-radius: 40px;
+  background-image: linear-gradient(to right, #ffa500, #ff4883, #da53e0, #40a0e0);
+  // height: auto;
+  // width: 205px;
+  position: absolute;
+}
+
+.bigcolorbutton:hover {
+  text-decoration: none;
+  color: rgba(242,242,242,1.0);
+  background-image: linear-gradient(to left, #ffa500, #ff4883, #da53e0, #40a0e0);
+}
+
+.smallcolorbutton {
+  padding: 25px 80px;
+  margin: 0px 0px;
+  position: absolute;
+  background-image: linear-gradient(to right, #ffa500, #ff4883, #da53e0, #40a0e0);
+  border-radius: 40px;
+}
+
+.text:hover {
+  text-decoration: none;
+  color: #40A0E0;
+}
+
+.whitebackground {
+  padding: 21px 76px;
+  position: absolute;
+  margin: 4px 4px;
+  color: #BA55D3;
+  background-color: white;
+  border-radius: 40px;
+}
+
+.text {
+  position: absolute;
+  color: #BA55D3;
+  padding: 8.5px 24px;
+  margin: 4px 4px;
+}
