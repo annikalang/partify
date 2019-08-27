@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   # GET /profile users controller profile action
   get '/profile', to: 'users#profile'
+  get '/components', to: 'pages#components'
   # resources for parties, only [:new, :create, :show]
 
   resources :parties, only: [:new, :create, :show] do
