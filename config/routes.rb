@@ -1,9 +1,16 @@
 Rails.application.routes.draw do
-  devise_for :users
+  get 'users/spotify'
+  get 'users/profile'
+
+  devise_for :users, :controllers => { :omniauth_callbacks => "callbacks" }
+
+  # devise_for :users
   root to: 'pages#home'
   # GET /profile users controller profile action
   get '/profile', to: 'users#profile'
   get '/components', to: 'pages#components'
+  get '/auth/spotify/callback', to: 'users#profile'
+  post '/auth/spotify/callback', to: 'users#spotify'
   # resources for parties, only [:new, :create, :show]
 
   resources :parties, only: [:new, :create, :show] do
