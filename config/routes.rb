@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     resources :guests, only: [:index]
   end
 
-  resources :playlists, only: [:show, :edit] do
+  resources :playlists, only: [:show, :edit, :update] do
     resources :tracks, only: [:index]
   end
 
