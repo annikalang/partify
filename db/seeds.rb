@@ -9,3 +9,5 @@
 puts "Create one User..."
 
 User.create!(email: "dan@test.com", password: "123456")
+
+puts "User created..."
