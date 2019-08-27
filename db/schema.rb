@@ -10,10 +10,56 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_26_141410) do
+ActiveRecord::Schema.define(version: 2019_08_27_121837) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "artists", force: :cascade do |t|
+    t.string "name"
+    t.string "genre"
+    t.string "spotify_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "parties", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.string "image"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_parties_on_user_id"
+  end
+
+  create_table "playlists", force: :cascade do |t|
+    t.float "danceability"
+    t.float "tempo"
+    t.float "energy"
+    t.float "valence"
+    t.integer "popularity"
+    t.bigint "party_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["party_id"], name: "index_playlists_on_party_id"
+  end
+
+  create_table "tracks", force: :cascade do |t|
+    t.string "title"
+    t.integer "duration_ms"
+    t.string "image"
+    t.float "danceability"
+    t.float "tempo"
+    t.float "energy"
+    t.float "valence"
+    t.integer "popularity"
+    t.string "spotify_id"
+    t.bigint "playlist_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["playlist_id"], name: "index_tracks_on_playlist_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -23,8 +69,14 @@ ActiveRecord::Schema.define(version: 2019_08_26_141410) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "display_name"
+    t.string "spotify_id"
+    t.string "image"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "parties", "users"
+  add_foreign_key "playlists", "parties"
+  add_foreign_key "tracks", "playlists"
 end
