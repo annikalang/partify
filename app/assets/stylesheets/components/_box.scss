@@ -1,0 +1,53 @@
+// Partysphere boxes
+
+.analyticscardsmall {
+    background-color: rgba(255,255,255,0.0);
+    top: 192px;
+    height: 64px;
+    width: 86px;
+    position: absolute;
+    margin: 0;
+    left: 45px;
+    transform: rotate(0);
+  }
+  .analyticscardsmall .rectangle {
+    background-color: rgba(63,63,63,1.0);
+    top: 0;
+    height: 64px;
+    width: 86px;
+    position: absolute;
+    margin: 0;
+    left: 0;
+    border-radius: 4px;
+    transform: rotate(0);
+  }
+  .analyticscardsmall .middletext {
+    background-color: rgba(255,255,255,0.0);
+    top: 9px;
+    height: auto;
+    width: auto;
+    position: absolute;
+    margin: 0;
+    left: 18px;
+    transform: rotate(0);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24.0px;
+    color: rgba(247,181,0,1.0);
+    text-align: center;
+    line-height: 28.0px;
+  }
+  .analyticscardsmall .songs {
+    background-color: rgba(255,255,255,0.0);
+    top: 38px;
+    height: auto;
+    width: auto;
+    position: absolute;
+    margin: 0;
+    left: 20px;
+    transform: rotate(0);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14.0px;
+    color: rgba(242,242,242,1.0);
+    text-align: center;
+    line-height: 17.0px;
+  }
