@@ -1,0 +1,49 @@
+.slidecontainer {
+  background-color: rgba(127,127,127,1.0);
+  border-radius: 25px;
+  top: 218px;
+  height: 68px;
+  width: 282px;
+  font-weight: lighter;
+  color: #CACACA;
+  transition: background 0.3s ease;
+  justify-content: space-around;
+  display: flex;
+  }
+.d-flex {
+    display: flex !important;
+}
+  .slidecontainer:hover {
+  background: #5e5e5e;
+}
+.items-slider {
+  box-sizing: border-box;
+  display: block;
+  padding-top: 30px;
+  -webkit-appearance: none;
+  appearance: none;
+  width: 75%;
+}
+.slider {
+  vertical-align: middle;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  -webkit-appearance: none;
+  height: 5px;
+  background: linear-gradient(to right, #ffa500, #ff4883, #da53e0, #40a0e0);
+  outline:0;
+}
+.slider:hover {
+outline:0;
+}
+
+.value {
+  text-align: center;
+  vertical-align: middle;
+  margin-bottom: 0;
+  padding-top: 2px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9em;
+}
+
