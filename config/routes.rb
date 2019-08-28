@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'parties/new'
+  get 'parties/edit'
+  get 'parties/update'
+  get 'playlists/new'
+  get 'playlists/update'
+  get 'playlists/edit'
   get 'users/spotify'
   get 'users/profile'
 
@@ -15,10 +21,10 @@ Rails.application.routes.draw do
 
   resources :parties, only: [:new, :create, :show] do
     resources :guests, only: [:index]
-  end
-
-  resources :playlists, only: [:show, :edit, :update] do
+    resources :playlists, only: [:show, :edit, :update, :new] do
     resources :tracks, only: [:index]
   end
+  end
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
