@@ -1,0 +1,9 @@
+<h1>Parties#new</h1>
+<p>Find me in app/views/parties/new.html.erb</p>
+<%= simple_form_for @party do |f| %>
+   <%= f.input :title %>
+   <%= f.input :description, as: :string %>
+   <%= f.input :photo %>
+   <%= f.input :photo_cache, as: :hidden %>
+   <%= f.submit "Let's Go", class: "btn btn-primary" %>
+<% end %>

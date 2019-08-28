@@ -15,3 +15,10 @@
 
 <p>Find me in app/views/users/profile.html.erb</p>
 
+<%=link_to "Create a Party", new_party_path %>
+
+<ul>
+  <%@parties.each do |party|%>
+  <li><%=link_to party.title, party_path(party)%>
+  <%end%>
+</li>

@@ -4,10 +4,10 @@ class UsersController < ApplicationController
   end
 
   def profile
-    @users = User.all
+    @user = current_user
+    @parties = Party.where(user_id: current_user.id)
   end
 
   def index
-
   end
 end
