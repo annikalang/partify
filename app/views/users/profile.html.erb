@@ -1,4 +1,17 @@
+
+
+<!-- User name -->
 <h1><%= current_user.display_name %></h1>
+
+
+<!-- User Image or default image, if no spotify image -->
+<% unless current_user.image.nil? %>
 <%= image_tag current_user.image%>
+<% else %>
+<%= image_tag("default_image.jpg", size: "160x100", alt: "Default User Image")%>
+<% end %>
+
+
+
 <p>Find me in app/views/users/profile.html.erb</p>
 
