@@ -1,4 +1,4 @@
 class Track < ApplicationRecord
-  belongs_to :playlist
   has_one :artist
+  belongs_to :playlist
 end
