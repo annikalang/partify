@@ -1,0 +1,51 @@
+.navbarbot {
+  width: 320px;
+  background-color: $container-gray;
+  margin: 20px;
+  max-height: 20px;
+  border: 1px solid white;
+}
+
+.navbarbot tr {
+  vertical-align: middle;
+  display: block;
+}
+
+.navbarbot td {
+  padding: 0px;
+  text-align: center;
+}
+
+.column a {
+  display: block;
+}
+
+.piechart {
+  width: 35px;
+  margin: 2px;
+}
+
+.magic {
+  width: 38px;
+}
+
+.column .text {
+  font-size: 10px;
+  text-align: center;
+  vertical-align: middle;
+  color: rgba(242,242,242,1.0);
+}
+
+.column .text:hover {
+  text-decoration: none;
+  color: #BA55D3;
+}
+
+.tracks {
+  width: 36px;
+  margin: 1px;
+}
+
+.guests {
+  width: 43px;
+}
