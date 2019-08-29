@@ -7,10 +7,11 @@
 <%= image_tag("default_image.jpg", size: "160x100", alt: "Default Party Image")%>
 <% end %>
 
-<p>Danceability: <%= (@playlist.danceability*100).round %>%</p>
-<p>Energy: <%= (@playlist.energy*100).round %>%</p>
-<p>Valence: <%= (@playlist.valence*100).round %>%</p>
-<p>Popularity: <%= @playlist.popularity %>%</p>
+<p>Danceability: <%= (@playlist.danceability)%>%</p>
+<p>Energy: <%= (@playlist.energy) %>%</p>
+<p>Valence: <%= (@playlist.valence)%>%</p>
+<p>Popularity: <%= @playlist.popularity %></p>
+
 
 <%= link_to "Tracks", party_playlist_tracks_path(@party.id, @party.playlist.id) %>
 

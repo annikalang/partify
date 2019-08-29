@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_28_160305) do
+ActiveRecord::Schema.define(version: 2019_08_29_144759) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,6 +35,14 @@ ActiveRecord::Schema.define(version: 2019_08_28_160305) do
     t.bigint "party_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "min_energy", default: 0
+    t.integer "max_energy", default: 100
+    t.integer "min_popularity", default: 0
+    t.integer "max_popularity", default: 100
+    t.integer "max_danceability", default: 100
+    t.integer "min_danceability", default: 0
+    t.integer "max_valence", default: 100
+    t.integer "min_valence", default: 0
     t.index ["party_id"], name: "index_playlists_on_party_id"
   end
 
