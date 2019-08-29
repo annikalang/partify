@@ -1,6 +1,15 @@
 <%@tracks.each do |track| %>
 <h2><%=track.title%></h2>
 <h2><%=(track.duration_ms / 1000)%></h2>
-<p><%=track.popularity%></p>
-<%=track.energy%>
+<p>Popularity<%=track.popularity%></p>
+<p>Danceability<%=track.danceability%></p>
+<p>Energy<%=track.energy%></p>
+<p>Valence<%=track.valence%></p>
+
+
 <%end%>
+
+
+
+
+
