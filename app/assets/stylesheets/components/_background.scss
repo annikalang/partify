@@ -1,0 +1,21 @@
+body {
+  background-image: linear-gradient(to bottom, #232323, #161616, #0a0a0a, #000000);
+  min-height: 100%;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+html {
+  background-color: black;
+}
+
+.mainbodywithnav {
+  height: 90%;
+}
+
+.mainbodynonav {
+  height: 100%;
+}
