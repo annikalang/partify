@@ -18,7 +18,9 @@ class SpotifyJob < ApplicationJob
           valence: ( (track.audio_features.valence.to_f) * 100).round,
           spotify_id: track.id,
           popularity: track.popularity,
-          image: track.artists.first.images.last["url"]
+          image: track.artists.first.images.last["url"],
+          artist: track.artists.first.name,
+          genre: track.artists.first.genres.first
         )
       end
     end

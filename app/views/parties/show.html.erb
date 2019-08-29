@@ -1,11 +1,17 @@
 <h1>Title: <%=@party.title%></h1>
 <h2>Description: <%=@party.description%></h2>
-<div><%= image_tag "#{@party.photo}", height: 100, width: 300%></div>
+
+<% unless @party.photo.nil? %>
+<%= image_tag "#{@party.photo}", height: 100, width: 300%>
+<% else %>
+<%= image_tag("default_image.jpg", size: "160x100", alt: "Default Party Image")%>
+<% end %>
 
 <p>Danceability: <%= (@playlist.danceability)%>%</p>
 <p>Energy: <%= (@playlist.energy) %>%</p>
 <p>Valence: <%= (@playlist.valence)%>%</p>
 <p>Popularity: <%= @playlist.popularity %></p>
+
 
 <%= link_to "Tracks", party_playlist_tracks_path(@party.id, @party.playlist.id) %>
 

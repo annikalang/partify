@@ -1,118 +1,91 @@
-// Partysphere boxes
+// small analytics 3 boxes
+.littlebox{
+  margin-left: auto;
+  margin-right: auto;
+}
+.smallanalytics {
+  border-collapse: collapse;
+  width: 336px;
+  height: 64px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.smallanalytics-row {
+  text-align: center;
+  border: none;
+}
 
-// small analytics card
-.analyticscardsmall {
-    background-color: rgba(255,255,255,0.0);
-    top: 192px;
-    height: 64px;
-    width: 86px;
-    position: absolute;
-    margin: 0;
-    left: 45px;
-    transform: rotate(0);
-  }
-  .analyticscardsmall .rectangle {
-    background-color: rgba(63,63,63,1.0);
-    top: 0;
-    height: 64px;
-    width: 86px;
-    position: absolute;
-    margin: 0;
-    left: 0;
-    border-radius: 4px;
-    transform: rotate(0);
-  }
-  .analyticscardsmall .middletext {
-    background-color: rgba(255,255,255,0.0);
-    top: 9px;
-    height: auto;
-    width: auto;
-    position: absolute;
-    margin: 0;
-    left: 18px;
-    transform: rotate(0);
-    font-family: 'Montserrat', sans-serif;
-    font-size: 24.0px;
-    color: rgba(247,181,0,1.0);
-    text-align: center;
-    line-height: 28.0px;
-  }
-  .analyticscardsmall .songs {
-    background-color: rgba(255,255,255,0.0);
-    top: 38px;
-    height: auto;
-    width: auto;
-    position: absolute;
-    margin: 0;
-    left: 20px;
-    transform: rotate(0);
-    font-family: 'Montserrat', sans-serif;
-    font-size: 14.0px;
-    color: rgba(242,242,242,1.0);
-    text-align: center;
-    line-height: 17.0px;
-  }
+.smallanalytics-text1 {
+  text-align: center;
+  border-right: solid 1px #FFFFFF;
+  color: #FFFFFF;
+}
+.smallanalytics-text2 {
+  text-align: center;
+  border-right: solid 1px #FFFFFF;
+  border-left: solid 1px #FFFFFF;
+  color: #FFFFFF;
+}.smallanalytics-text3 {
+  text-align: center;
+  border-left: solid 1px #FFFFFF;
+  color: #FFFFFF;
+}
 
-// large analytics card
-  .analyticscard {
-     background-color: rgba(255,255,255,0.0);
-     top: 625px;
-     height: 109px;
-     width: 125px;
-     position: absolute;
-     margin: 0;
-     left: 48px;
-     transform: rotate(0);
-  }
-  .analyticscard .analyticscard5 {
-     background-color: rgba(255,255,255,0.0);
-     top: 0;
-     height: 109px;
-     width: 125px;
-     position: relative;
-     margin: 0;
-     left: 0;
-     transform: rotate(0);
-  }
-  .analyticscard .analyticscard5 .rectangle {
-     background-color: rgba(63,63,63,1.0);
-     top: 0;
-     height: 109px;
-     width: 125px;
-     position: absolute;
-     margin: 0;
-     left: 0;
-     border-radius: 4px;
-     transform: rotate(0);
-  }
-  .analyticscard .analyticscard5 .danceability {
-     background-color: rgba(255,255,255,0.0);
-     top: 69px;
-     height: auto;
-     width: 114px;
-     position: absolute;
-     margin: 0;
-     left: 6px;
-     transform: rotate(0);
-     font-family: 'Montserrat', sans-serif;
-     font-size: 18.0px;
-     color: rgba(242,242,242,1.0);
-     text-align: center;
-     line-height: 21.0px;
-  }
-  .analyticscard .analyticscard5 .percent {
-     background-color: rgba(255,255,255,0.0);
-     top: 16px;
-     height: auto;
-     width: 86px;
-     position: absolute;
-     margin: 0;
-     left: 19px;
-     transform: rotate(0);
-     font-family: 'Montserrat', sans-serif;
-     font-size: 40.0px;
-     color: rgba(50,197,255,1.0);
-     text-align: center;
-     line-height: 47.0px;
-  }
-
+//large analytics box 4x4
+.bigbox{
+  margin-left: auto;
+  margin-right: auto;
+}
+.biganalytics {
+  border-collapse: collapse;
+  width: 336px;
+  height: 283px;
+  table-layout: fixed;
+  margin-left: auto;
+  margin-right: auto;
+}
+.biganalytics-row {
+  text-align: center;
+}
+.biganalytics-text1 {
+  max-width: 168px;
+  color: #FFFFFF;
+  border-right: solid 1px #FFFFFF;
+}
+.biganalytics-text2 {
+  text-align: center;
+  color: #FFFFFF;
+}
+.biganalytics-text3 {
+  text-align: center;
+  color: #FFFFFF;
+  font-size: 1.9em;
+  border-right: solid 1px #FFFFFF;
+}
+.biganalytics-text4 {
+  text-align: center;
+  color: #FFFFFF;
+  font-size: 1.9em;
+}
+.biganalytics-text5 {
+  text-align: center;
+  color: #FFFFFF;
+  border-right: solid 1px #FFFFFF;
+  border-top: solid 1px #FFFFFF;
+}
+.biganalytics-text6 {
+  text-align: center;
+  color: #FFFFFF;
+  border-top: solid 1px #FFFFFF;
+}
+.biganalytics-text7 {
+  text-align: center;
+  color: #FFFFFF;
+  font-size: 1.9em;
+  border-right: solid 1px #FFFFFF;
+}
+.biganalytics-text8 {
+  text-align: center;
+  color: #FFFFFF;
+  font-size: 1.9em;
+}

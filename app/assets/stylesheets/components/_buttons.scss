@@ -1,53 +1,202 @@
-.bigcolorbutton {
-  text-decoration: none;
-  font-size: 24.0px;
-  color: rgba(242,242,242,1.0);
+// white and transparent button
+
+.whitetrans {
+//   background-color: transparent;
+  height: 67px;
+  width: 332px;
+  font-family: $body-font;
+  border-radius: 33.5px;
+  border: solid 2px #ffffff;
   text-align: center;
-  font-family: $headers-font;
+  line-height: 67px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.bigcolorbutton:hover {
-  text-decoration: none;
-  color: rgba(242,242,242,1.0);
+.whitetrans:hover {
+  background-color: white;
 }
 
-.btn-bigcolor {
-  padding: 15px 25px;
-  width: 250px;
+.whitetrans:hover a{
+  color: #1E1E1E;
+}
+
+.whitetrans a {
+  font-family: $body-font;
+  font-size: 28px;
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: 1.23px;
   text-align: center;
-  // margin: 150px 20px;
-  border: 1px solid rgba(242,242,242,1.0);
-  text-decoration: none;
-  border-radius: 40px;
-  background-image: linear-gradient(to right, #ffa500, #ff4883, #da53e0, #40a0e0);
+  color: #ffffff;
 }
 
-.btn-bigcolor:hover {
-  background-image: linear-gradient(to left, #ffa500, #ff4883, #da53e0, #40a0e0);
+.spotify {
+  color: white;
+  // margin-left: auto;
+  // margin-right: auto;
+  font-size: 61px;
+  justify-content: space-around;
+  margin: 20px;
 }
+
+.smallwhitetrans {
+  height: 67px;
+  width: 195px;
+  border-radius: 33.5px;
+  font-family: $body-font;
+  text-align: center;
+  line-height: 67px;
+  border: solid 2px #ffffff;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.smallwhitetrans a {
+  font-family: $body-font;
+  font-size: 28px;
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: 1.23px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.smallwhitetrans:hover {
+  background-color: white;
+}
+
+.smallwhitetrans:hover a{
+  color: #1E1E1E;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #1E1E1E;
+  text-decoration: none;
+}
+
 
 .smallcolorbutton {
   padding: 2px 2px;
+  margin-left: auto;
+  margin-right: auto;
+  float: none;
   background-image: linear-gradient(to right, #ffa500, #ff4883, #da53e0, #40a0e0);
-  border-radius: 40px;
-  width: 200px;
+  border-radius: 33.5px;
+  width: 250px;
+  height: 67px;
 }
 
 .whitebackground {
   // padding: 21px 76px;
-  margin: 4px 4px;
-  background-color: white;
-  border-radius: 40px;
+  // margin: 4px 4px;
+  background-image: linear-gradient(to bottom, #161616, #000000);
+  border-radius: 33.5px;
+  width: 246px;
+  height: 63px;
+  line-height: 62px;
   text-align: center;
-  font-family: $headers-font;
-  padding: 15px 20px;
+  // padding-left: 0.5px;
+}
+
+ .whitebackground:hover  {
+  background-image: linear-gradient(to right, #ffa500, #ff4883, #da53e0, #40a0e0);
 }
 
 .whitebackground a {
-  color: #BA55D3;
+  color: white;
+  font-family: $body-font;
+  font-size: 28px;
+  font-weight: 300;
+  font-style: normal;
 }
 
 .whitebackground a:hover {
-  color: #40A0E0;
+  color: white;
   text-decoration: none;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// // Big Color Button
+// .bigcolorbutton {
+//   text-decoration: none;
+//   font-size: 24.0px;
+//   color: rgba(242,242,242,1.0);
+//   text-align: center;
+//   font-family: $body-font;
+// }
+
+// .bigcolorbutton:hover {
+//   text-decoration: none;
+//   color: rgba(242,242,242,1.0);
+// }
+
+// .btn-bigcolor {
+//   padding: 15px 25px;
+//   width: 250px;
+//   text-align: center;
+//   // margin: 150px 20px;
+//   border: 1px solid rgba(242,242,242,1.0);
+//   text-decoration: none;
+//   border-radius: 40px;
+//   background-image: linear-gradient(to right, #ffa500, #ff4883, #da53e0, #40a0e0);
+// }
+
+// .btn-bigcolor:hover {
+//   background-image: linear-gradient(to left, #ffa500, #ff4883, #da53e0, #40a0e0);
+// }
+
+
+// // Small Color Button
+// .smallcolorbutton {
+//   padding: 2px 2px;
+//   background-image: linear-gradient(to right, #ffa500, #ff4883, #da53e0, #40a0e0);
+//   border-radius: 40px;
+//   width: 200px;
+// }
+
+// .whitebackground {
+//   // padding: 21px 76px;
+//   margin: 4px 4px;
+//   background-color: white;
+//   border-radius: 40px;
+//   text-align: center;
+//   font-family: $body-font;
+//   padding: 15px 20px;
+// }
+
+// .whitebackground a {
+//   color: #BA55D3;
+// }
+
+// .whitebackground a:hover {
+//   color: #40A0E0;
+//   text-decoration: none;
+// }
