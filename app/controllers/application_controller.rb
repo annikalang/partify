@@ -6,12 +6,12 @@ class ApplicationController < ActionController::Base
 
   def set_party_and_playlist
     if current_user
-      if controller_name == "parties"
+      if controller_name == "parties" && params[:id]
         @party = Party.find(params[:id])
-      elsif controller_name == "playlists" || controller_name == "tracks"
+      elsif (controller_name == "playlists" || controller_name == "tracks") && params[:party_id]
         @party = Party.find(params[:party_id])
       end
-      @playlist = @party.playlist
+      @playlist = @party.playlist if @party
     end
   end
 end
