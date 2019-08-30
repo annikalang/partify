@@ -7,7 +7,7 @@
 <%= image_tag("default_image.jpg", size: "160x100", alt: "Default Party Image")%>
 <% end %>
 
-  <div class="wrapper">
+<div class="wrapper">
     <div class="container d-flex flex-column justify-content-center align-items-center">
       <div class="title text-center mb-5">
       </div>
@@ -29,22 +29,33 @@
   </div>
   <script>
   let ctx = document.getElementById('myChart').getContext('2d');
-  let labels = ["danceability","energy","valence","popularity"];
+  const genres = []
+  <% @genre.each do |genre| %>
+    genres.push("<%= genre %>");
+  <% end %>
+  const genresData = new Object;
+  genres.forEach((genre) => {
+   if (genresData[genre] > 0){
+    genresData[genre] += 1
+   }else{
+    genresData[genre] = 1
+   }
+  });
   let colorHex = ['#32C5FF', '#B620E0', '#F7B500', '#808080'];
-
   let myChart = new Chart(ctx, {
     type: 'doughnut',
     data: {
       datasets: [{
-        data: [<%=@danceability %>,<%= @energy %>,<%= @valence %>,<%= @popularity %>],
+        data: Object.values(genresData),
         backgroundColor: colorHex
       }],
-      labels: labels
+      labels: Object.keys(genresData)
     },
     options: {
       responsive: true,
       legend: {
-        position: 'bottom'
+        position: 'bottom',
+        display: false
       },
       plugins: {
         datalabels: {
@@ -63,7 +74,7 @@
             size: '10'
           },
           formatter: (value) => {
-            return value + ' %';
+            return value;
           }
         }
       }
