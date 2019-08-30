@@ -11,8 +11,8 @@ class PlaylistsController < ApplicationController
   end
 
   def edit
-    @playlist = Playlist.find(params[:id])
     @party = Party.find(params[:party_id])
+    @playlist = Playlist.find(params[:id])
     @tracks = @playlist.tracks
   end
 

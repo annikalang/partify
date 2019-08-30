@@ -1,14 +1,47 @@
-// Partysphere avatars
-.avatar-large {
-  width: 149px;
-  height: 149px;
+
+// Partysphere User avatar
+.avatar-user{
+text-align: center;
+width: 180px;
+height: 247px;
+margin-left: auto;
+margin-right: auto;
+}
+.profile{
+ width: 180px;
+  height: 180px;
   border-radius: 50%;
+}
+.avatar-large {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+}
+.user-name {
+text-align: center;
+font-size: 28px;
+font-weight: bold;
+padding-top: 20px;
+}
+
+// Avatar for Party Guests
+.avatar-guest{
+text-align: center;
+width: 83px;
+height: 112px;
+margin-left: auto;
+margin-right: auto;
 }
 .avatar-medium {
   width: 83px;
   height: 83px;
   border-radius: 50%;
 }
+.guest-name {
+text-align: center;
+}
+
+// small avatar
 .avatar-small {
   width: 64px;
   height: 64px;
