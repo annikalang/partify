@@ -17,6 +17,15 @@
         </div>
       </div>
     </div>
+    <p><%= @danceability %>%</p>
+    <p><%= @energy %>%</p>
+    <p><%= @valence %>%</p>
+    <p><%= @popularity %>%</p>
+
+
+    <%= link_to "Tracks", party_playlist_tracks_path(@party.id, @party.playlist.id) %>
+
+    <%= render 'shared/navbar' %>
   </div>
   <script>
   let ctx = document.getElementById('myChart').getContext('2d');
@@ -62,13 +71,4 @@
   })
 
   </script>
-
-<p><%= @danceability %>%</p>
-<p><%= @energy %>%</p>
-<p><%= @valence %>%</p>
-<p><%= @popularity %>%</p>
-
-
-<%= link_to "Tracks", party_playlist_tracks_path(@party.id, @party.playlist.id) %>
-
 
