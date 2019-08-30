@@ -1,11 +1,18 @@
 <div class=mainbodywithnav>
 <%@tracks.each do |track| %>
 <h2><%=track.title%></h2>
-<h2><%=(track.duration_ms / 1000)%></h2>
-<p>Popularity<%=track.popularity%></p>
+<h2><%=track.artist%></h2>
+<% unless track.image.nil? %>
+<%= image_tag track.image%>
+<% else %>
+<%= image_tag("default_image.jpg", size: "160x100", alt: "Default Artist Image")%>
+<% end %>
+
+<!-- just for testing purposes -->
+<!-- <p>Popularity<%=track.popularity%></p>
 <p>Danceability<%=track.danceability%></p>
 <p>Energy<%=track.energy%></p>
-<p>Valence<%=track.valence%></p>
+<p>Valence<%=track.valence%></p> -->
 
 
 <%end%>
