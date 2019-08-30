@@ -21,8 +21,9 @@
 }
 
 .navbarbot td:hover {
-  background-color: white;
+  background-color: black;
   border-color: 1px solid white;
+  color: pink;
 }
 
 .iconlink {
@@ -42,5 +43,8 @@
 
 .column:hover a .iconlink {
   color: #1E1E1E;
+  text-decoration: none;
 }
+
+
 
