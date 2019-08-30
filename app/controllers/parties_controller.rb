@@ -10,6 +10,7 @@ class PartiesController < ApplicationController
     @energy = @playlist.energy.to_i
     @popularity = @playlist.popularity.to_i
     @valence = @playlist.valence.to_i
+    @genre = @party.playlist.tracks.pluck(:genre)
   end
 
   def new
