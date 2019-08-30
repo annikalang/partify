@@ -4,14 +4,21 @@
 
 <div class="d-flex fill">
 <%= simple_form_for @party do |f| %>
-   <%= f.input :title, as: :string%>
-   <%= f.input :description, as: :string %>
-   <%= f.input :photo, as: :file %>
-   <%= f.input :photo_cache, as: :hidden %>
-   <div class="smallcolorbutton">
+  <%= f.input :title, as: :string%>
+  <%= f.input :description, as: :string %>
+  <%= f.input :photo, as: :file %>
+  <%= f.input :photo_cache, as: :hidden %>
+  <div class="smallcolorbutton">
     <div class="whitebackground">
-      <a href='<%= f.submit%>'>Let's Go!</a>
+      <div>
+        <%= f.button :submit %>
+      </div>
     </div>
   </div>
 <% end %>
 </div>
+
+
+
+
+
