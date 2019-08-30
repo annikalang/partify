@@ -7,10 +7,10 @@ class PartiesController < ApplicationController
     @playlist = @party.playlist
 
     # Set average analytics of playlist's tracks
-    @playlist.danceability = @playlist.tracks.average(:danceability)
-    @playlist.energy = @playlist.tracks.average(:energy)
-    @playlist.popularity = @playlist.tracks.average(:popularity)
-    @playlist.valence = @playlist.tracks.average(:valence)
+    @playlist.danceability = @playlist.tracks.average(:danceability).round
+    @playlist.energy = @playlist.tracks.average(:energy).round
+    @playlist.popularity = @playlist.tracks.average(:popularity).round
+    @playlist.valence = @playlist.tracks.average(:valence).round
   end
 
   def new
