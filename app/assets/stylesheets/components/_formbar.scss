@@ -1,21 +1,22 @@
 .fill {
+  // margin-top: 20px;
   justify-content: space-around;
+  margin: 0 41px;
 }
 
 .field {
   background-color: transparent;
   height: 40px;
-  width: 250px;
   border-radius: 23px;
   font-family: $body-font;
-  font-size: 14.0px;
+  font-size: 18.0px;
   color: rgba(242,242,242,1.0);
   text-align: left;
   line-height: 21.0px;
   border: 2px solid white;
   padding: 20px;
-  // margin-left: auto;
-  // margin-right: auto;
+  width: 100%;
+  // margin: 0 41px;
 }
 
 .field:hover {
@@ -32,3 +33,99 @@
 input:focus {
   outline: none;
 }
+
+
+// simple form style
+
+.new_party {
+  justify-content: space-around;
+}
+
+.new_party input {
+  background-color: transparent;
+  height: 40px;
+  // width: 250px;
+  border-radius: 23px;
+  font-family: $body-font;
+  font-size: 18.0px;
+  color: rgba(242,242,242,1.0);
+  text-align: left;
+  line-height: 21.0px;
+  border: 2px solid white;
+  padding: 20px;
+  // margin: 0 41px;
+  // margin-right: auto;
+}
+
+.field:hover {
+}
+
+.party_title label {
+  // margin-left: 20px;
+  // padding-left: 10px;
+  // margin-top: 20px;
+  margin-bottom: 0px;
+  color: white;
+}
+
+.party_title input:hover {
+  outline: none;
+}
+
+#party_photo {
+  background-color: white;
+  height: 20px;
+  // width: 250px;
+  border-radius: 23px;
+  font-family: $body-font;
+  font-size: 14.0px;
+  color: rgba(242,242,242,1.0);
+  text-align: left;
+  line-height: 21.0px;
+  border: 2px solid white;
+  padding: 20px;
+  // margin: 0 41px;
+}
+
+#party_photo input {
+  line-height: 14px;
+  text-align: center;
+  vertical-align: middle;
+  padding: 1px
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

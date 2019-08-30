@@ -3,14 +3,12 @@
 .whitetrans {
 //   background-color: transparent;
   height: 67px;
-  width: 332px;
   font-family: $body-font;
   border-radius: 33.5px;
   border: solid 2px #ffffff;
   text-align: center;
   line-height: 67px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 21.5px;
 }
 
 .whitetrans:hover {
@@ -44,14 +42,13 @@
 
 .smallwhitetrans {
   height: 67px;
-  width: 195px;
+  // width: 195px;
   border-radius: 33.5px;
   font-family: $body-font;
   text-align: center;
   line-height: 67px;
   border: solid 2px #ffffff;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 68.5px;
 }
 
 .smallwhitetrans a {
@@ -83,25 +80,20 @@ a:hover {
 
 .smallcolorbutton {
   padding: 2px 2px;
-  margin-left: auto;
-  margin-right: auto;
+  margin-top: 110px;
+  margin: 0 41px;
   float: none;
   background-image: linear-gradient(to right, #ffa500, #ff4883, #da53e0, #40a0e0);
   border-radius: 33.5px;
-  width: 250px;
   height: 67px;
 }
 
 .whitebackground {
-  // padding: 21px 76px;
-  // margin: 4px 4px;
   background-image: linear-gradient(to bottom, #161616, #000000);
   border-radius: 33.5px;
-  width: 246px;
   height: 63px;
   line-height: 62px;
   text-align: center;
-  // padding-left: 0.5px;
 }
 
  .whitebackground:hover  {
