@@ -1,5 +1,5 @@
-<h1>Title: <%=@party.title%></h1>
-<h2>Description: <%=@party.description%></h2>
+<h1><%=@party.title%></h1>
+<h2><%=@party.description%></h2>
 
 <% unless @party.photo.nil? %>
 <%= image_tag "#{@party.photo}", height: 100, width: 300%>
@@ -7,10 +7,10 @@
 <%= image_tag("default_image.jpg", size: "160x100", alt: "Default Party Image")%>
 <% end %>
 
-<p>Danceability: <%= @danceability %>%</p>
-<p>Energy: <%= @energy %>%</p>
-<p>Valence: <%= @valence %>%</p>
-<p>Popularity: <%= @popularity %>%</p>
+<p><%= @danceability %>%</p>
+<p><%= @energy %>%</p>
+<p><%= @valence %>%</p>
+<p><%= @popularity %>%</p>
 
 
 <%= link_to "Tracks", party_playlist_tracks_path(@party.id, @party.playlist.id) %>
