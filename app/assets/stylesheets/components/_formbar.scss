@@ -43,16 +43,17 @@ input:focus {
 
 .new_party input {
   background-color: transparent;
-  height: 40px;
-  // width: 250px;
+  // height: 40px;
+  // width: 230px;
   border-radius: 23px;
   font-family: $body-font;
-  font-size: 18.0px;
+  font-size: 20.0px;
+  padding: 0px;
   color: rgba(242,242,242,1.0);
-  text-align: left;
-  line-height: 21.0px;
+  // text-align: left;
+  // line-height: 21.0px;
   border: 2px solid white;
-  padding: 20px;
+  // padding: 20px;
   // margin: 0 41px;
   // margin-right: auto;
 }
@@ -73,26 +74,77 @@ input:focus {
 }
 
 #party_photo {
-  background-color: white;
-  height: 20px;
-  // width: 250px;
-  border-radius: 23px;
+  // background-color: white;
   font-family: $body-font;
   font-size: 14.0px;
-  color: rgba(242,242,242,1.0);
-  text-align: left;
-  line-height: 21.0px;
-  border: 2px solid white;
-  padding: 20px;
-  // margin: 0 41px;
 }
 
-#party_photo input {
-  line-height: 14px;
+input[type=file] {
+  color: white;
+  line-height: 20px;
   text-align: center;
-  vertical-align: middle;
-  padding: 1px
+  // vertical-align: middle;
+  // padding: 1.5px;
+  border-radius: 0px;
+  // width: 230px;
+  font-size: 100px;
+  // position: absolute;
+  // left: 0;
+  // top: 0;
+  // opacity: 0;
 }
+
+
+#new_party input[type=submit] {
+  border: 1px solid transparent;
+  font-family: $body-font;
+  font-size: 28.0px;
+  height: 63px;
+  // line-height: 62px;
+  text-align: center;
+  font-weight: 300;
+  font-style: normal;
+  vertical-align: middle;
+}
+
+#new_party input[type=hidden] {
+  color: white;
+}
+
+// .smallcolorbutton {
+//   padding: 2px 2px;
+//   margin-top: 110px;
+//   margin: 0 41px;
+//   float: none;
+//   background-image: linear-gradient(to right, #ffa500, #ff4883, #da53e0, #40a0e0);
+//   border-radius: 33.5px;
+//   height: 67px;
+// }
+
+// .whitebackground {
+//   background-image: linear-gradient(to bottom, #161616, #000000);
+//   border-radius: 33.5px;
+//   height: 63px;
+//   line-height: 62px;
+//   text-align: center;
+// }
+
+//  .whitebackground:hover  {
+//   background-image: linear-gradient(to right, #ffa500, #ff4883, #da53e0, #40a0e0);
+// }
+
+// .whitebackground a {
+//   color: white;
+//   font-family: $body-font;
+//   font-size: 28px;
+//   font-weight: 300;
+//   font-style: normal;
+// }
+
+// .whitebackground a:hover {
+//   color: white;
+//   text-decoration: none;
+// }
 
 
 

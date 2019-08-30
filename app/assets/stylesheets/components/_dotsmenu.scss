@@ -6,3 +6,22 @@ font-size: 2em;
 .3dots {
 color: white;
 }
+
+.twodots {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 60px;
+}
+
+.twodots i {
+  margin: 10px;
+}
+
+#dot1 {
+  color: white;
+  opacity: 0.5;
+}
+
+#dot2 {
+  color: white;
+}
