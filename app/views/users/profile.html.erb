@@ -1,7 +1,7 @@
 <div class="mainbodynonav">
 
   <div class="users-container">
-    <!-- User Image or default image, if no spotify image -->
+    <!-- USER'S (DEFAULT) IMAGE -->
     <div class="avatar-user">
 
       <% unless current_user.image.nil? %>
@@ -12,8 +12,10 @@
 
     </div>
 
-    <!-- User name -->
+    <!-- USER'S NAME -->
     <h1 class="header"><%= current_user.display_name %></h1>
+
+    <!-- CREATE PARTY BUTTON -->
 
     <div class="smallcolorbutton">
       <div class="whitebackground">
@@ -23,13 +25,38 @@
       </div>
     </div>
 
+    <!-- USER'S PARTY ANALYTICS -->
+
     <h1 class="sub-header">My analytics</h1>
+
+    <!-- <div class="bigbox"> -->
+     <table class="biganalytics">
+      <tr class="biganalytics-row">
+        <td class="biganalytics-text1">Danceability</td>
+        <td class="biganalytics-text2">Energy</td>
+      </tr>
+      <tr class="biganalytics-row">
+        <td class="biganalytics-text3">80%</td>
+        <td class="biganalytics-text4">80%</td>
+      </tr>
+      <tr class="biganalytics-row">
+        <td class="biganalytics-text5">Valence</td>
+        <td class="biganalytics-text6">Popularity</td>
+      </tr>
+      <tr class="biganalytics-row">
+        <td class="biganalytics-text7">80%</td>
+        <td class="biganalytics-text8">80%</td>
+      </tr>
+    <!-- </div> -->
+
+    <!-- USER'S PARTIES LIST -->
     <h1 class="sub-header">My parties</h1>
+
+
 
     <%@parties.each do |party|%>
 
     <div class="party-card">
-
 
       <% unless party.image.nil? %>
       <%= image_tag party.image, class: "party-image"%>
