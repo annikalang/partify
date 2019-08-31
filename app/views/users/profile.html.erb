@@ -15,18 +15,23 @@
     <!-- User name -->
     <h1 class="header"><%= current_user.display_name %></h1>
 
-
-    <%=link_to "Create a Party", new_party_path %>
-
+    <div class="smallcolorbutton">
+      <div class="whitebackground">
+        <div>
+          <%=link_to "Create a Party", new_party_path %>
+        </div>
+      </div>
+    </div>
 
     <%@parties.each do |party|%>
 
     <div class="party-card">
 
+
       <% unless party.image.nil? %>
-      <%= image_tag party.image%>
+      <%= image_tag party.image, class: "party-image"%>
       <% else %>
-      <%= image_tag("default_image.jpg", size: "160x100", alt: "Default Party Image")%>
+      <%= image_tag("default_image.jpg", size: "160x100", alt: "Default Party Image", class: "party-image")%>
       <% end %>
 
       <div class="party-info">
