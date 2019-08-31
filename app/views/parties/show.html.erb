@@ -1,85 +1,163 @@
-<h1><%=@party.title%></h1>
-<h2><%=@party.description%></h2>
+  <%= render 'shared/dropdown' %>
 
-<% unless @party.photo.nil? %>
-<%= image_tag "#{@party.photo}", height: 100, width: 300%>
-<% else %>
-<%= image_tag("default_image.jpg", size: "160x100", alt: "Default Party Image")%>
-<% end %>
+  <!-- PARTY TITLE -->
+  <h1 class="header"><%=@party.title%></h1>
 
-<div class="wrapper">
+  <!-- PARTY PHOTO -->
+  <div class="party-photo-container">
+    <% unless @party.photo.nil? %>
+    <%= image_tag "#{@party.photo}", class: "party-photo-round"%>
+    <% else %>
+    <%= image_tag("default_image.jpg", alt: "Default Party Image", class: "party_photo-round")%>
+    <% end %>
+  </div>
+
+  <!-- PARTY DESCRIPTION -->
+  <p class="paragraph"><%=@party.description%></p>
+
+
+  <!-- ANALYTICS -->
+  <h1 class="sub-header">Party analytics</h1>
+
+  <!-- SMALL PARTY ANALYTICS TABLE -->
+  <div class="littlebox">
+    <table class="smallanalytics">
+      <tr class="smallanalytics-row">
+        <td class="smallanalytics-text1">Tracks</td>
+        <td class="smallanalytics-text2">Duration</td>
+        <td class="smallanalytics-text3">Guests</td>
+      </tr>
+      <tr class="smallanalytics-row">
+        <td class="smallanalytics-text1"><%= @playlist.tracks.size %></td>
+        <td class="smallanalytics-text2"><%= @duration %></td>
+        <td class="smallanalytics-text3">15</td>
+      </tr>
+      </table>
+
+  <!-- GENRE CHART -->
+  <div class="wrapper">
     <div class="container d-flex flex-column justify-content-center align-items-center">
       <div class="title text-center mb-5">
       </div>
       <div class="chart-wrapper">
         <div class="chart-container" style="position: relative; height:40vh; width:80vw">
-        <canvas id="myChart"></canvas>
+          <canvas id="myChart"></canvas>
         </div>
       </div>
     </div>
-    <p><%= @danceability %>%</p>
-    <p><%= @energy %>%</p>
-    <p><%= @valence %>%</p>
-    <p><%= @popularity %>%</p>
-
-
-    <%= link_to "Tracks", party_playlist_tracks_path(@party.id, @party.playlist.id) %>
-
-    <%= render 'shared/navbar' %>
   </div>
+
+  <!-- BIG PARTY ANALYTICS TABLE -->
+  <div class="bigbox">
+   <table class="biganalytics">
+    <tr class="biganalytics-row">
+      <td class="biganalytics-text1">Danceability</td>
+      <td class="biganalytics-text2">Energy</td>
+    </tr>
+    <tr class="biganalytics-row">
+
+      <!-- DANCEABILITY -->
+      <td class="biganalytics-text3">
+        <% if @danceability.nil? %>
+        0%
+        <% else %>
+        <%= @danceability.to_i %>%
+        <% end %>
+      </td>
+
+      <!-- ENERGY -->
+      <td class="biganalytics-text4">
+        <% if @energy.nil? %>
+        0%
+        <% else %>
+        <%= @energy.to_i %>%
+        <% end %>
+      </td>
+    </tr>
+    <tr class="biganalytics-row">
+      <td class="biganalytics-text5">Valence</td>
+      <td class="biganalytics-text6">Popularity</td>
+    </tr>
+    <tr class="biganalytics-row">
+
+      <!-- VALENCE -->
+      <td class="biganalytics-text7">
+        <% if @valence.nil? %>
+        0%
+        <% else %>
+        <%= @valence.to_i %>%
+        <% end %>
+      </td>
+
+      <!-- POPULARITY -->
+      <td class="biganalytics-text8">
+        <% if @popularity.nil? %>
+        0%
+        <% else %>
+        <%= @popularity.to_i %>%
+        <% end %>
+      </td>
+    </tr>
+  </table>
+
+
+
+  <%= render 'shared/navbar' %>
+
+  <!-- JS CODE FOR GENRE CHART -->
   <script>
-  let ctx = document.getElementById('myChart').getContext('2d');
-  const genres = []
-  <% @genre.each do |genre| %>
+    let ctx = document.getElementById('myChart').getContext('2d');
+    const genres = []
+    <% @genre.each do |genre| %>
     genres.push("<%= genre %>");
-  <% end %>
-  const genresData = new Object;
-  genres.forEach((genre) => {
-   if (genresData[genre] > 0){
-    genresData[genre] += 1
-   }else{
-    genresData[genre] = 1
-   }
+    <% end %>
+    const genresData = new Object;
+    genres.forEach((genre) => {
+     if (genresData[genre] > 0){
+      genresData[genre] += 1
+    }else{
+      genresData[genre] = 1
+    }
   });
-  let colorHex = ['#32C5FF', '#B620E0', '#F7B500', '#808080'];
-  let myChart = new Chart(ctx, {
-    type: 'doughnut',
-    data: {
-      datasets: [{
-        data: Object.values(genresData),
-        backgroundColor: colorHex
-      }],
-      labels: Object.keys(genresData)
-    },
-    options: {
-      responsive: true,
-      legend: {
-        position: 'bottom',
-        display: false
+    let colorHex = ['#32C5FF', '#B620E0', '#F7B500', '#808080'];
+    let myChart = new Chart(ctx, {
+      type: 'doughnut',
+      data: {
+        datasets: [{
+          data: Object.values(genresData),
+          backgroundColor: colorHex
+        }],
+        labels: Object.keys(genresData)
       },
-      plugins: {
-        datalabels: {
-          color: '#fff',
-          anchor: 'end',
-          align: 'start',
-          offset: -10,
-          borderWidth: 2,
-          borderColor: '#fff',
-          borderRadius: 25,
-          backgroundColor: (context) => {
-            return context.dataset.backgroundColor;
-          },
-          font: {
-            weight: 'bold',
-            size: '10'
-          },
-          formatter: (value) => {
-            return value;
+      options: {
+        responsive: true,
+        legend: {
+          position: 'bottom',
+          display: false
+        },
+        plugins: {
+          datalabels: {
+            color: '#fff',
+            anchor: 'end',
+            align: 'start',
+            offset: -10,
+            borderWidth: 2,
+            borderColor: '#fff',
+            borderRadius: 25,
+            backgroundColor: (context) => {
+              return context.dataset.backgroundColor;
+            },
+            font: {
+              weight: 'bold',
+              size: '10'
+            },
+            formatter: (value) => {
+              return value;
+            }
           }
         }
       }
-    }
-  })
+    })
 
   </script>
 

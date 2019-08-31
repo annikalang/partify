@@ -1,0 +1,16 @@
+.party-photo-container {
+  margin: auto;
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+
+.party-photo-round {
+  margin: auto;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+}

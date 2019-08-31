@@ -7,7 +7,7 @@ class UsersController < ApplicationController
     @user = current_user
     @parties = Party.where(user_id: current_user.id)
 
-    # CREATE EMPTY ARRAY TO BE FILLED WITH ALL THE AVERAGE VALUES OF ONE ATTRIBUTE
+    # CREATE EMPTY ARRAY TO BE FILLED WITH ALL THE AVERAGE VALUES OF ONE PARTY
     @array_danceability = []
     @array_energy = []
     @array_popularity = []
@@ -27,14 +27,14 @@ class UsersController < ApplicationController
     @average_popularity = (@array_popularity.reduce(:+) / @array_popularity.size.to_f)
     @average_valence = (@array_valence.reduce(:+) / @array_valence.size.to_f)
 
-    # !! THS CALCULATES THE AVERAGE OF ALL THE PLAYLISTS !!
+    # !! THIS CALCULATES THE AVERAGE OF ALL THE PLAYLISTS !!
     # @average_danceability = Playlist.average(:danceability)
   end
 
+
   def index
+
   end
 
-  # def average_value
-  #   inject(&:+) / size
-  # end
+
 end
