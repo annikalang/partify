@@ -9,13 +9,17 @@
   align-items: center;
   border-bottom: 1px solid white;
 }
+
 .party-image {
   width: 88px;
   height: 88px;
-  object-fit: cover;}
-.party-info{
+  object-fit: cover;
+}
+
+.party-info {
   padding: 16px;
 }
+
 .party-text {
   font-size: 16px;
   margin: 0;
@@ -32,19 +36,24 @@
   align-items: center;
   border-bottom: 1px solid white;
 }
+
 .track-image {
   width: 103px;
   height: 102px;
-  object-fit: cover;}
-.track-info{
+  object-fit: cover;
+}
+
+.track-info {
   padding: 16px;
 }
+
 .track-title {
   font-size: 16px;
   margin: 0;
 }
+
 .track-artist {
   font-size: 16px;
   margin: 0;
-  color: $white;
+  color: grey;
 }

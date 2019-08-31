@@ -13,15 +13,23 @@
   background-color: none;
   max-width: 98px;
 }
-.dropdown-item:hover{
-  background: linear-gradient(to right, #ffa500, #ff4883, #da53e0, #40a0e0, #da53e0);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+
+.dropdown-item{
+  color: white !important;
+  background-color: #040404;
+  max-width: 98px;
+  &:hover{
+    background: linear-gradient(to right, #ffa500, #ff4883, #da53e0, #40a0e0, #da53e0) !important;
+    color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   // background-image: linear-gradient(to right, #ffa500, #ff4883, #da53e0, #40a0e0);
+  }
 }
+
 .dropdown-toggle {
-color: white;
-background-color: transparent;
+  color: grey;
+  background-color: transparent;
 }
 #dropdownMenuButton {
   font-size: 2em;
@@ -33,11 +41,6 @@ background-color: transparent;
 }
 #dropdownMenuButton.dropdown-toggle::after {
  display: none;
-}
-.dropdown-item{
-color: white;
-background-color: #040404;
-max-width: 98px;
 }
 
 .twodots {
