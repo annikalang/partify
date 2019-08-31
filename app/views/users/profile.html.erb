@@ -1,24 +1,43 @@
 <div class="mainbodynonav">
 
-<!-- User name -->
-<h1><%= current_user.display_name %></h1>
+  <div class="users-container">
+    <!-- User Image or default image, if no spotify image -->
+    <div class="avatar-user">
+
+      <% unless current_user.image.nil? %>
+      <%= image_tag current_user.image, class: "profile"%>
+      <% else %>
+      <%= image_tag("default_image.jpg", size: "160x100", alt: "Default User Image", class: "profile")%>
+      <% end %>
+
+    </div>
+
+    <!-- User name -->
+    <h1 class="header"><%= current_user.display_name %></h1>
 
 
-<!-- User Image or default image, if no spotify image -->
-<% unless current_user.image.nil? %>
-<%= image_tag current_user.image%>
-<% else %>
-<%= image_tag("default_image.jpg", size: "160x100", alt: "Default User Image")%>
-<% end %>
+    <%=link_to "Create a Party", new_party_path %>
 
-<br>
 
-<%=link_to "Create a Party", new_party_path %>
+    <%@parties.each do |party|%>
 
-<ul>
-  <%@parties.each do |party|%>
-  <li><%=link_to party.title, party_path(party)%>
-  <%end%>
-</li>
-</ul>
+    <div class="party-card">
+
+      <% unless party.image.nil? %>
+      <%= image_tag party.image%>
+      <% else %>
+      <%= image_tag("default_image.jpg", size: "160x100", alt: "Default Party Image")%>
+      <% end %>
+
+      <div class="party-info">
+        <%=link_to party.title, party_path(party), class: "party-text"%>
+      </div>
+
+    </div>
+
+    <%end%>
+
+
+  </div>
+
 </div>
