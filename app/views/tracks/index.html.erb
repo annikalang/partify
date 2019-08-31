@@ -1,36 +1,39 @@
 <div class=mainbodywithnav>
 
-<%= render 'shared/dropdown' %>
+  <%= render 'shared/dropdown' %>
 
 
   <p class="header"><%=@party.title%></p>
   <p class="sub-header">Tracks</p>
 
-  <!-- LOOP OVER EACH TRACK OF PLAYLIST -->
-  <%@tracks.each do |track| %>
+  <div class="tracks-container">
 
-  <!-- CREATE A CARD -->
-  <div class="track-card">
+    <!-- LOOP OVER EACH TRACK OF PLAYLIST -->
+    <%@tracks.each do |track| %>
 
-    <!-- SET (DEFAULT) IMAGE -->
-    <% unless track.image.nil? %>
-    <%= image_tag track.image, class: "track-image"%>
-    <% else %>
-    <%= image_tag("default_image.jpg", size: "160x100", alt: "Default Artist Image", class: "track-image")%>
-    <% end %>
+    <!-- CREATE A CARD -->
+    <div class="track-card">
 
-    <!-- PRINT INFO ON TRACK TITLE AND ARTIST -->
-    <div class="track-info">
-      <h3 class="track-title"><%=track.title%></h3>
-      <p class="track-artist"><%=track.artist%></p>
+      <!-- SET (DEFAULT) IMAGE -->
+      <% unless track.image.nil? %>
+      <%= image_tag track.image, class: "track-image"%>
+      <% else %>
+      <%= image_tag("default_image.jpg", size: "160x100", alt: "Default Artist Image", class: "track-image")%>
+      <% end %>
+
+      <!-- PRINT INFO ON TRACK TITLE AND ARTIST -->
+      <div class="track-info">
+        <h3 class="track-title"><%=track.title%></h3>
+        <p class="track-artist"><%=track.artist%></p>
+      </div>
+
+      <!-- END CARD -->
     </div>
 
-    <!-- END CARD -->
+    <!-- END LOOP -->
+    <%end%>
+
   </div>
-
-  <!-- END LOOP -->
-  <%end%>
-
 
 </div>
 
