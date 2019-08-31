@@ -31,10 +31,10 @@ class UsersController < ApplicationController
     # @average_danceability = Playlist.average(:danceability)
   end
 
+
   def index
+
   end
 
-  # def average_value
-  #   inject(&:+) / size
-  # end
+
 end
