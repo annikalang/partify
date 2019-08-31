@@ -1,10 +1,11 @@
 .dropdown {
   margin-left: auto;
-  margin-right: auto;
+  margin-right: 15px;
   width: 45px;
   height: 31px;
-  position: relative
+  position: relative;
 }
+
 .dropdown-menu.show{
   background-color: #040404;
   width: 98px;
