@@ -90,8 +90,8 @@
 
     <div class="party-card">
 
-      <% unless party.image.nil? %>
-      <%= image_tag party.image, class: "party-image"%>
+      <% unless party.photo.nil? %>
+      <%= image_tag "#{party.photo}", class: "party-image"%>
       <% else %>
       <%= image_tag("default_image.jpg", size: "160x100", alt: "Default Party Image", class: "party-image")%>
       <% end %>
