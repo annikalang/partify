@@ -16,6 +16,25 @@
   <p class="paragraph"><%=@party.description%></p>
 
 
+  <!-- ANALYTICS -->
+  <h1 class="sub-header">Party analytics</h1>
+
+  <!-- SMALL PARTY ANALYTICS TABLE -->
+  <div class="littlebox">
+    <table class="smallanalytics">
+      <tr class="smallanalytics-row">
+        <td class="smallanalytics-text1">Tracks</td>
+        <td class="smallanalytics-text2">Duration</td>
+        <td class="smallanalytics-text3">Guests</td>
+      </tr>
+      <tr class="smallanalytics-row">
+        <td class="smallanalytics-text1"><%= @playlist.tracks.size %></td>
+        <td class="smallanalytics-text2"><%= @duration %></td>
+        <td class="smallanalytics-text3">15</td>
+      </tr>
+      </table>
+
+  <!-- GENRE CHART -->
   <div class="wrapper">
     <div class="container d-flex flex-column justify-content-center align-items-center">
       <div class="title text-center mb-5">
@@ -26,16 +45,66 @@
         </div>
       </div>
     </div>
-    <p><%= @danceability %>%</p>
-    <p><%= @energy %>%</p>
-    <p><%= @valence %>%</p>
-    <p><%= @popularity %>%</p>
-
-
-    <%= link_to "Tracks", party_playlist_tracks_path(@party.id, @party.playlist.id) %>
-
-    <%= render 'shared/navbar' %>
   </div>
+
+  <!-- BIG PARTY ANALYTICS TABLE -->
+  <div class="bigbox">
+   <table class="biganalytics">
+    <tr class="biganalytics-row">
+      <td class="biganalytics-text1">Danceability</td>
+      <td class="biganalytics-text2">Energy</td>
+    </tr>
+    <tr class="biganalytics-row">
+
+      <!-- DANCEABILITY -->
+      <td class="biganalytics-text3">
+        <% if @danceability.nil? %>
+        0%
+        <% else %>
+        <%= @danceability.to_i %>%
+        <% end %>
+      </td>
+
+      <!-- ENERGY -->
+      <td class="biganalytics-text4">
+        <% if @energy.nil? %>
+        0%
+        <% else %>
+        <%= @energy.to_i %>%
+        <% end %>
+      </td>
+    </tr>
+    <tr class="biganalytics-row">
+      <td class="biganalytics-text5">Valence</td>
+      <td class="biganalytics-text6">Popularity</td>
+    </tr>
+    <tr class="biganalytics-row">
+
+      <!-- VALENCE -->
+      <td class="biganalytics-text7">
+        <% if @valence.nil? %>
+        0%
+        <% else %>
+        <%= @valence.to_i %>%
+        <% end %>
+      </td>
+
+      <!-- POPULARITY -->
+      <td class="biganalytics-text8">
+        <% if @popularity.nil? %>
+        0%
+        <% else %>
+        <%= @popularity.to_i %>%
+        <% end %>
+      </td>
+    </tr>
+  </table>
+
+
+
+  <%= render 'shared/navbar' %>
+
+  <!-- JS CODE FOR GENRE CHART -->
   <script>
     let ctx = document.getElementById('myChart').getContext('2d');
     const genres = []
