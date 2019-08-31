@@ -1,13 +1,20 @@
   <%= render 'shared/dropdown' %>
 
-  <h1><%=@party.title%></h1>
-  <h2><%=@party.description%></h2>
+  <!-- PARTY TITLE -->
+  <h1 class="header"><%=@party.title%></h1>
 
-  <% unless @party.photo.nil? %>
-  <%= image_tag "#{@party.photo}", height: 100, width: 300%>
-  <% else %>
-  <%= image_tag("default_image.jpg", size: "160x100", alt: "Default Party Image")%>
-  <% end %>
+  <!-- PARTY PHOTO -->
+  <div class="party-photo-container">
+    <% unless @party.photo.nil? %>
+    <%= image_tag "#{@party.photo}", class: "party-photo-round"%>
+    <% else %>
+    <%= image_tag("default_image.jpg", alt: "Default Party Image", class: "party_photo-round")%>
+    <% end %>
+  </div>
+
+  <!-- PARTY DESCRIPTION -->
+  <p class="paragraph"><%=@party.description%></p>
+
 
   <div class="wrapper">
     <div class="container d-flex flex-column justify-content-center align-items-center">
