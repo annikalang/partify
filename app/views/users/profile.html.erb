@@ -41,22 +41,15 @@
 
         <!-- DANCEABILITY -->
         <td class="biganalytics-text3">
-          <% if @parties.empty? %>
-          0%
-          <% else %>
           <%= @average_danceability.to_i %>%
-          <% end %>
         </td>
 
         <!-- ENERGY -->
         <td class="biganalytics-text4">
-          <% if @parties.empty? %>
-          0%
-          <% else %>
           <%= @average_energy.to_i %>%
-          <% end %>
         </td>
       </tr>
+
       <tr class="biganalytics-row">
         <td class="biganalytics-text5">Valence</td>
         <td class="biganalytics-text6">Popularity</td>
@@ -65,21 +58,14 @@
 
         <!-- VALENCE -->
         <td class="biganalytics-text7">
-          <% if @parties.empty? %>
-          0%
-          <% else %>
           <%= @average_valence.to_i %>%
-          <% end %>
         </td>
 
         <!-- POPULARITY -->
         <td class="biganalytics-text8">
-          <% if @parties.empty? %>
-          0%
-          <% else %>
           <%= @average_popularity.to_i %>%
-          <% end %>
         </td>
+
       </tr>
     </table>
     <!-- </div> -->
