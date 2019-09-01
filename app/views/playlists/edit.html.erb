@@ -2,11 +2,11 @@
 
   <%= render 'shared/dropdown' %>
 
-  <h1><%= @party.title %></h1>
-  <h2>Modifications</h2>
+  <h1 class="header"><%= @party.title %></h1>
+  <h2 class="sub-header">Modifications</h2>
 
 
-
+  <!-- HIDDEN FORM (ONLY BUTTON IS SEEN) -->
 
   <%= form_for @playlist, url: party_playlist_path(@party,@playlist), method: :patch do |f| %>
   <%= f.hidden_field :min_energy, id: 'min_energy' %>
@@ -17,132 +17,152 @@
   <%= f.hidden_field :max_valence, id: 'max_valence' %>
   <%= f.hidden_field :min_popularity, id: 'min_popularity' %>
   <%= f.hidden_field :max_popularity, id: 'max_popularity' %>
-  <%= f.submit "Submit" %>
+  <div class="smallcolorbutton">
+    <div class="whitebackground">
+      <div>
+        <%= f.submit "Save", class:"sub-header" , id: "save-button"%>
+      </div>
+    </div>
+  </div>
   <% end %>
+
 
   <!-- Energy html - jQuery -->
 
-  <p>
-    <label for="display">Energy</label>
-    <input type="text" id="energy" readonly style="border:0; color:#f6931f; font-weight:bold;">
-  </p>
+  <div class="slider-container">
 
-  <div id="slider-range-energy"></div>
-  <script>
-    $( function() {
-      $( "#slider-range-energy" ).slider({
-        range: true,
-        min: 0,
-        max: 100,
-        values: [<%=(@tracks.minimum(:energy))%>, <%=(@tracks.maximum(:energy))%>],
-        slide: function(event, energy) {
-          const minEnergy = energy.values[0]
-          const maxEnergy = energy.values[1]
+    <div class="individual-slider">
+      <p>
+        <label for="display">Energy</label>
+        <br>
+        <input type="text" id="energy" readonly style="border:0; color:#fff; font-weight:bold; background-color: transparent;">
+      </p>
 
-          $('#min_energy').val(minEnergy)
-          $('#max_energy').val(maxEnergy)
+      <div id="slider-range-energy"></div>
+      <script>
+        $( function() {
+          $( "#slider-range-energy" ).slider({
+            range: true,
+            min: 0,
+            max: 100,
+            values: [<%=(@tracks.minimum(:energy))%>, <%=(@tracks.maximum(:energy))%>],
+            slide: function(event, energy) {
+              const minEnergy = energy.values[0]
+              const maxEnergy = energy.values[1]
 
+              $('#min_energy').val(minEnergy)
+              $('#max_energy').val(maxEnergy)
+
+              $("#energy").val($( "#slider-range-energy" ).slider( "values", 0 ) + "%" +
+                " - " + $( "#slider-range-energy" ).slider( "values", 1  ) +"%" );
+            }
+          });
           $("#energy").val($( "#slider-range-energy" ).slider( "values", 0 ) + "%" +
             " - " + $( "#slider-range-energy" ).slider( "values", 1  ) +"%" );
-        }
-      });
-      $("#energy").val($( "#slider-range-energy" ).slider( "values", 0 ) + "%" +
-        " - " + $( "#slider-range-energy" ).slider( "values", 1  ) +"%" );
-    });
-  </script>
+        });
+      </script>
+    </div>
 
-  <!-- Danceability html - jQuery -->
+    <!-- Danceability html - jQuery -->
+    <div class="individual-slider">
+      <p>
+        <label for="display">Danceability</label>
+        <br>
+        <input type="text" id="danceability" readonly style="border:0; color:#fff; font-weight:bold; background-color: transparent;">
+      </p>
 
-  <p>
-    <label for="display">Danceability</label>
-    <input type="text" id="danceability" readonly style="border:0; color:#f6931f; font-weight:bold;">
-  </p>
+      <div id="slider-range-danceability"></div>
+      <script>
+        $( function() {
+          $( "#slider-range-danceability" ).slider({
+            range: true,
+            min: 0,
+            max: 100,
+            values: [<%=(@tracks.minimum(:danceability))%>, <%=(@tracks.maximum(:danceability))%>],
+            slide: function(event, danceability) {
+              const minDanceability = danceability.values[0]
+              const maxDanceability = danceability.values[1]
 
-  <div id="slider-range-danceability"></div>
-  <script>
-    $( function() {
-      $( "#slider-range-danceability" ).slider({
-        range: true,
-        min: 0,
-        max: 100,
-        values: [<%=(@tracks.minimum(:danceability))%>, <%=(@tracks.maximum(:danceability))%>],
-        slide: function(event, danceability) {
-          const minDanceability = danceability.values[0]
-          const maxDanceability = danceability.values[1]
+              $('#min_danceability').val(minDanceability)
+              $('#max_danceability').val(maxDanceability)
 
-          $('#min_danceability').val(minDanceability)
-          $('#max_danceability').val(maxDanceability)
-
+              $("#danceability").val($( "#slider-range-danceability" ).slider( "values", 0 ) + "%" +
+                " - " + $( "#slider-range-danceability" ).slider( "values", 1  ) +"%" );
+            }
+          });
           $("#danceability").val($( "#slider-range-danceability" ).slider( "values", 0 ) + "%" +
             " - " + $( "#slider-range-danceability" ).slider( "values", 1  ) +"%" );
-        }
-      });
-      $("#danceability").val($( "#slider-range-danceability" ).slider( "values", 0 ) + "%" +
-        " - " + $( "#slider-range-danceability" ).slider( "values", 1  ) +"%" );
-    });
-  </script>
+        });
+      </script>
+    </div>
 
-  <!-- Valence html - jQuery -->
+    <!-- Valence html - jQuery -->
+    <div class="individual-slider">
+      <p>
+        <label for="display">Valence</label>
+        <br>
+        <input type="text" id="valence" readonly style="border:0; color:#fff; font-weight:bold; background-color: transparent;">
+      </p>
 
-  <p>
-    <label for="display">Valence</label>
-    <input type="text" id="valence" readonly style="border:0; color:#f6931f; font-weight:bold;">
-  </p>
+      <div id="slider-range-valence"></div>
+      <script>
+        $( function() {
+          $( "#slider-range-valence" ).slider({
+            range: true,
+            min: 0,
+            max: 100,
+            values: [<%=(@tracks.minimum(:valence))%>, <%=(@tracks.maximum(:valence))%>],
+            slide: function(event, valence) {
+              const minValence = valence.values[0]
+              const maxValence = valence.values[1]
 
-  <div id="slider-range-valence"></div>
-  <script>
-    $( function() {
-      $( "#slider-range-valence" ).slider({
-        range: true,
-        min: 0,
-        max: 100,
-        values: [<%=(@tracks.minimum(:valence))%>, <%=(@tracks.maximum(:valence))%>],
-        slide: function(event, valence) {
-          const minValence = valence.values[0]
-          const maxValence = valence.values[1]
+              $('#min_valence').val(minValence)
+              $('#max_valence').val(maxValence)
 
-          $('#min_valence').val(minValence)
-          $('#max_valence').val(maxValence)
-
+              $("#valence").val($( "#slider-range-valence" ).slider( "values", 0 ) + "%" +
+                " - " + $( "#slider-range-valence" ).slider( "values", 1  ) +"%" );
+            }
+          });
           $("#valence").val($( "#slider-range-valence" ).slider( "values", 0 ) + "%" +
             " - " + $( "#slider-range-valence" ).slider( "values", 1  ) +"%" );
-        }
-      });
-      $("#valence").val($( "#slider-range-valence" ).slider( "values", 0 ) + "%" +
-        " - " + $( "#slider-range-valence" ).slider( "values", 1  ) +"%" );
-    });
-  </script>
+        });
+      </script>
+    </div>
 
-  <!-- Popularity html - jQuery -->
+    <!-- Popularity html - jQuery -->
+    <div class="individual-slider">
+      <p>
+        <label for="display">Popularity</label>
+        <br>
+        <input type="text" id="popularity" readonly style="border:0; color:#fff; font-weight:bold; background-color: transparent;">
+      </p>
 
-  <p>
-    <label for="display">Popularity</label>
-    <input type="text" id="popularity" readonly style="border:0; color:#f6931f; font-weight:bold;">
-  </p>
+      <div id="slider-range-popularity"></div>
+      <script>
+        $( function() {
+          $( "#slider-range-popularity" ).slider({
+            range: true,
+            min: 0,
+            max: 100,
+            values: [<%=(@tracks.minimum(:popularity))%>, <%=(@tracks.maximum(:popularity))%>],
+            slide: function(event,popularity) {
+              const minPopularity =popularity.values[0]
+              const maxPopularity =popularity.values[1]
 
-  <div id="slider-range-popularity"></div>
-  <script>
-    $( function() {
-      $( "#slider-range-popularity" ).slider({
-        range: true,
-        min: 0,
-        max: 100,
-        values: [<%=(@tracks.minimum(:popularity))%>, <%=(@tracks.maximum(:popularity))%>],
-        slide: function(event,popularity) {
-          const minPopularity =popularity.values[0]
-          const maxPopularity =popularity.values[1]
+              $('#min_popularity').val(minPopularity)
+              $('#max_popularity').val(maxPopularity)
 
-          $('#min_popularity').val(minPopularity)
-          $('#max_popularity').val(maxPopularity)
-
+              $("#popularity").val($( "#slider-range-popularity" ).slider( "values", 0 ) + "%" +
+                " - " + $( "#slider-range-popularity" ).slider( "values", 1  ) +"%" );
+            }
+          });
           $("#popularity").val($( "#slider-range-popularity" ).slider( "values", 0 ) + "%" +
             " - " + $( "#slider-range-popularity" ).slider( "values", 1  ) +"%" );
-        }
-      });
-      $("#popularity").val($( "#slider-range-popularity" ).slider( "values", 0 ) + "%" +
-        " - " + $( "#slider-range-popularity" ).slider( "values", 1  ) +"%" );
-    });
-  </script>
+        });
+      </script>
+    </div>
+
+  </div>
 
 </div>
 
