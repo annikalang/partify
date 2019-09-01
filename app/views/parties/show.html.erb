@@ -24,29 +24,58 @@
   <% @genre.each do |genre| %>
     genres.push("<%= genre %>");
   <% end %>
-  const genresData = new Object;
-  genres.forEach((genre) => {
-   if (genresData[genre] > 0){
-    genresData[genre] += 1
-   }else{
-    genresData[genre] = 1
-   }
-  });
+  const occurrences = {}
+
+genres.forEach((v) => {
+  if (occurrences[v]) {
+    occurrences[v] = occurrences[v] + 1
+  } else occurrences[v] = 1
+})
+
+const sortable = [];
+for (let o in occurrences) {
+  sortable.push([o, occurrences[o]]);
+}
+
+sortable.sort(function(a, b) {
+    return b[1] - a[1];
+});
+
+const genresByPopularity = {}
+
+sortable.forEach(pair => {
+  genresByPopularity[pair[0]] = pair[1]
+})
+
+let check = Object(genresByPopularity)
+
+var array_keys = new Array();
+var array_values = new Array();
+
+for (var key in check) {
+  array_keys.push(key);
+  array_values.push(check[key])
+}
+//
+//
+console.log(array_keys.slice(0,5));
+console.log(array_values.slice(0,5));
   let colorHex = ['#32C5FF', '#B620E0', '#F7B500', '#808080'];
   let myChart = new Chart(ctx, {
     type: 'doughnut',
     data: {
       datasets: [{
-        data: Object.values(genresData),
+        data: array_values.slice(0,5),
         backgroundColor: colorHex
       }],
-      labels: Object.keys(genresData)
+      labels: array_keys.slice(0,5)
     },
     options: {
       responsive: true,
       legend: {
-        position: 'bottom',
+        position: 'left',
         display: false
+
       },
       plugins: {
         datalabels: {
