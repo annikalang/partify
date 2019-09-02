@@ -21,10 +21,9 @@
   max-width: 98px;
   &:hover{
     background: linear-gradient(to right, #ffa500, #ff4883, #da53e0, #40a0e0, #da53e0) !important;
-    color: transparent;
+    color: white;
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  // background-image: linear-gradient(to right, #ffa500, #ff4883, #da53e0, #40a0e0);
+    -webkit-text-fill-color: white;
   }
 }
 
