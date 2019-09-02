@@ -1,24 +1,97 @@
 <div class="mainbodynonav">
 
-<!-- User name -->
-<h1><%= current_user.display_name %></h1>
+  <%= render 'shared/dropdown' %>
+
+  <div class="users-container">
+    <!-- USER'S (DEFAULT) IMAGE -->
+    <div class="avatar-user">
+
+      <% unless current_user.image.nil? %>
+      <%= image_tag current_user.image, class: "profile"%>
+      <% else %>
+      <%= image_tag("default_image.jpg", size: "160x100", alt: "Default User Image", class: "profile")%>
+      <% end %>
+
+    </div>
+
+    <!-- USER'S NAME -->
+    <h1 class="header"><%= current_user.display_name %></h1>
+
+    <!-- CREATE PARTY BUTTON -->
+
+    <div class="smallcolorbutton">
+      <div class="whitebackground">
+        <div>
+          <%=link_to "Create a Party", new_party_path %>
+        </div>
+      </div>
+    </div>
+
+    <!-- USER'S PARTY ANALYTICS TABLE -->
+
+    <h1 class="sub-header">My analytics</h1>
+
+    <div class="bigbox">
+     <table class="biganalytics">
+      <tr class="biganalytics-row">
+        <td class="biganalytics-text1">Danceability</td>
+        <td class="biganalytics-text2">Energy</td>
+      </tr>
+      <tr class="biganalytics-row">
+
+        <!-- DANCEABILITY -->
+        <td class="biganalytics-text3">
+          <%= @average_danceability.to_i %>%
+        </td>
+
+        <!-- ENERGY -->
+        <td class="biganalytics-text4">
+          <%= @average_energy.to_i %>%
+        </td>
+      </tr>
+
+      <tr class="biganalytics-row">
+        <td class="biganalytics-text5">Valence</td>
+        <td class="biganalytics-text6">Popularity</td>
+      </tr>
+      <tr class="biganalytics-row">
+
+        <!-- VALENCE -->
+        <td class="biganalytics-text7">
+          <%= @average_valence.to_i %>%
+        </td>
+
+        <!-- POPULARITY -->
+        <td class="biganalytics-text8">
+          <%= @average_popularity.to_i %>%
+        </td>
+
+      </tr>
+    </table>
+    <!-- </div> -->
+
+    <!-- USER'S PARTIES LIST -->
+    <h1 class="sub-header">My parties</h1>
 
 
-<!-- User Image or default image, if no spotify image -->
-<% unless current_user.image.nil? %>
-<%= image_tag current_user.image%>
-<% else %>
-<%= image_tag("default_image.jpg", size: "160x100", alt: "Default User Image")%>
-<% end %>
+    <%@parties.each do |party|%>
 
-<br>
+    <div class="party-card">
 
-<%=link_to "Create a Party", new_party_path %>
+      <% unless party.photo.nil? %>
+      <%= image_tag "#{party.photo}", class: "party-image"%>
+      <% else %>
+      <%= image_tag("default_image.jpg", size: "160x100", alt: "Default Party Image", class: "party-image")%>
+      <% end %>
 
-<ul>
-  <%@parties.each do |party|%>
-  <li><%=link_to party.title, party_path(party)%>
-  <%end%>
-</li>
-</ul>
+      <div class="party-info">
+        <%=link_to party.title, party_path(party), class: "party-text"%>
+      </div>
+
+    </div>
+
+    <%end%>
+
+  </div>
+
 </div>

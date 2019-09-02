@@ -1,28 +1,38 @@
+<div class="navbar">
 <table class="navbarbot">
-    <tr>
-        <td class="column">
-          <a href="/parties/id">
-            <i class="fas fa-chart-pie"></i>
-            <div class="iconlink">Dashboard</div>
-          </a>
-        </td>
-      <td class="column">
-        <a href="/parties/:party_id/playlists/:id/edit">
-          <i class="fas fa-hat-wizard"></i>
-          <div class="iconlink">Modify</div>
-        </a>
-      </td>
-      <td class="column">
-        <a href="/parties/:party_id/playlists/:id">
-          <i class="fas fa-list-ul"></i>
-          <div class="iconlink">Tracks</div>
-        </a>
-      </td>
-      <td class="column">
-        <a href="/parties/:party_id/guests">
-          <i class="fas fa-users"></i>
-          <div class="iconlink">Guests</div>
-        </a>
-      </td>
-    </tr>
-  </table>
+  <tr>
+    <!-- DASHBOARD -->
+    <td class="column">
+      <i class="fas fa-chart-pie"></i>
+      <div class="iconlink">
+       <%=link_to "Dashboard", party_path(@party), class: "iconlink"%>
+     </div>
+   </a>
+ </td>
+ <!-- MODIFICATIONS -->
+ <td class="column">
+  <i class="fas fa-hat-wizard"></i>
+  <div class="iconlink">
+    <%=link_to "Modify", edit_party_playlist_path(@party, @playlist), class: "iconlink"%>
+  </div>
+</a>
+</td>
+<!-- TRACKS -->
+<td class="column">
+  <i class="fas fa-list-ul"></i>
+  <div class="iconlink">
+    <%=link_to "Tracks", party_playlist_tracks_path(@party, @playlist), class: "iconlink"%>
+  </div>
+</a>
+</td>
+<!-- GUESTLIST -->
+<td class="column">
+  <i class="fas fa-users"></i>
+  <div class="iconlink">
+    <%=link_to "Guests", party_path(@party), class: "iconlink"%>
+  </div>
+</a>
+</td>
+</tr>
+</table>
+</div>

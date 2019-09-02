@@ -1,12 +1,12 @@
 Rails.application.routes.draw do
-  get 'parties/new'
-  get 'parties/edit'
-  get 'parties/update'
-  get 'playlists/new'
-  get 'playlists/update'
-  get 'playlists/edit'
-  get 'users/spotify'
-  get 'users/profile'
+  # get 'parties/new'
+  # get 'parties/edit'
+  # get 'parties/update'
+  # get 'playlists/new'
+  # get 'playlists/update'
+  # get 'playlists/edit'
+  # get 'users/spotify'
+  # get 'users/profile'
 
   devise_for :users, :controllers => { :omniauth_callbacks => "callbacks" }
 
@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   # resources for parties, only [:new, :create, :show]
 
   resources :parties, only: [:new, :create, :show] do
-    resources :guests, only: [:index]
+    resources :users, only: [:index]
     resources :playlists, only: [:show, :edit, :update, :new] do
     resources :tracks, only: [:index]
   end

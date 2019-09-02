@@ -1,0 +1,47 @@
+.individual-slider {
+  margin-top: 30px;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+#save-button {
+  width: 100px;
+  background-color: transparent;
+  border: none;
+}
+
+#energy {
+  width: 90px;
+}
+
+#danceability {
+  width: 90px;
+}
+
+#valence {
+  width: 90px;
+}
+
+#popularity {
+  width: 90px;
+}
+
+#slider-range-energy {
+  background-color: $gray;
+  border: none;
+}
+
+#slider-range-danceability {
+  background-color: $gray;
+  border: none;
+}
+
+#slider-range-valence {
+  background-color: $gray;
+  border: none;
+}
+
+#slider-range-popularity {
+  background-color: $gray;
+  border: none;
+}
