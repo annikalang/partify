@@ -29,4 +29,14 @@ class PlaylistsController < ApplicationController
     )
   end
 
+  def push_to_spotify
+    local_playlist = Playlist.find params[:playlist_id]
+    local_party = Party.find params[:party_id]
+    user = RSpotify::User.new(current_user.raw_data)
+    tracks = local_playlist.tracks.map { |track| "spotify:track:#{track.spotify_id}" }
+    playlist = user.create_playlist!(local_party.title , public: false)
+
+    playlist.add_tracks!(tracks)
+  end
+
 end
