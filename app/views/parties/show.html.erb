@@ -40,7 +40,7 @@
       <div class="title text-center mb-5">
       </div>
       <div class="chart-wrapper">
-        <div class="chart-container" style="position: relative; height:40vh; width:80vw">
+        <div class="chart-container" style="position: relative; height:50vh; width:80vw">
           <canvas id="myChart"></canvas>
         </div>
       </div>
@@ -160,6 +160,11 @@ array_values.slice(0,5).forEach((value) =>{
       labels: array_keys.slice(0,5)
     },
     options: {
+      layout: {
+    padding: {
+      bottom: 10
+    }
+  },
       responsive: true,
       legend: {
         position: 'left',
