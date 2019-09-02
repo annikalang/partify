@@ -19,7 +19,7 @@
     crossorigin="anonymous">
   </head>
 
-  <body class="animated fadeInRight">
+  <body class="animated fadeIn">
     <%= render 'shared/flashes' %>
     <%= yield %>
     <%= javascript_include_tag 'application' %>
@@ -32,7 +32,7 @@
     as.forEach((a) => {
       a.addEventListener('click', (e) => {
         console.log('Click')
-        document.body.classList.add('fadeOutLeft')
+        document.body.classList.add('fadeIn')
       })
     })
   </script>
