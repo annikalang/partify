@@ -2,6 +2,7 @@
   // margin-top: 20px;
   justify-content: space-around;
   margin: 0 41px;
+  margin-bottom: 80px;
 }
 
 .field {
@@ -9,7 +10,7 @@
   height: 40px;
   border-radius: 23px;
   font-family: $body-font;
-  font-size: 18.0px;
+  font-size: 14.0px;
   color: rgba(242,242,242,1.0);
   text-align: left;
   line-height: 21.0px;
@@ -49,16 +50,21 @@ input:focus {
   font-family: $body-font;
   font-size: 20.0px;
   padding: 0px;
-  color: rgba(242,242,242,1.0);
+  // color: rgba(242,242,242,1.0);
   // text-align: left;
   // line-height: 21.0px;
   border: 2px solid white;
+  // padding-left: 10px;
   // padding: 20px;
   // margin: 0 41px;
   // margin-right: auto;
 }
 
 .field:hover {
+}
+
+.party_title {
+  padding-bottom: 20px;
 }
 
 .party_title label {
@@ -69,14 +75,29 @@ input:focus {
   color: white;
 }
 
+.party_title input {
+  padding-left: 10px;
+  font-size: 14px;
+}
+
 .party_title input:hover {
   outline: none;
+}
+
+.party_description input {
+  padding-left: 10px;
+  font-size: 14px;
+}
+
+.party_description {
+  padding-bottom: 20px;
 }
 
 #party_photo {
   // background-color: white;
   font-family: $body-font;
   font-size: 14.0px;
+  margin-bottom: 80px;
 }
 
 input[type=file] {
@@ -85,7 +106,7 @@ input[type=file] {
   text-align: center;
   // vertical-align: middle;
   // padding: 1.5px;
-  border-radius: 0px;
+  border-radius: 23px;
   // width: 230px;
   font-size: 100px;
   // position: absolute;
