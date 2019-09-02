@@ -13,7 +13,8 @@ class PartiesController < ApplicationController
     @valence = @playlist.valence.to_i
     @genre = @party.playlist.tracks.pluck(:genre)
 
-    @duration = get_duration_hrs_and_mins(@playlist.tracks.sum(:duration_ms))
+    @duration = @playlist.get_duration_hrs_and_mins
+
   end
 
   def new
@@ -40,14 +41,5 @@ class PartiesController < ApplicationController
 
   def party_parameters
     params.require(:party).permit(:title, :description, :photo)
-  end
-
-  # CONVERT MILLISECONDS INTO HOURS AND MINUTES
-  def get_duration_hrs_and_mins(duration_ms)
-    hours = duration_ms / (1000 * 60 * 60)
-    minutes = duration_ms / (1000 * 60) % 60
-    "#{hours}:#{minutes}h"
-  rescue
-    ""
   end
 end

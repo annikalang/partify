@@ -31,7 +31,7 @@
         <td class="smallanalytics-text3">Guests</td>
       </tr>
       <tr class="smallanalytics-row">
-        <td class="smallanalytics-text1"><%= @playlist.tracks.size %></td>
+        <td class="smallanalytics-text1"><%= @playlist.scoped_tracks_size %></td>
         <td class="smallanalytics-text2"><%= @duration %></td>
         <td class="smallanalytics-text3">15</td>
       </tr>
@@ -194,13 +194,17 @@
   </table>
 </div>
 </div>
+
+  <%= form_for '', url: party_playlist_create_on_spotify_path(@party, @party.playlist), method: :post do |f| %>
+<%= f.submit  %>
+<% end %>
   <%= render 'shared/navbar' %>
 <!-- </div> -->
   <!-- </div> -->
 
   <!-- JS CODE FOR GENRE CHART -->
-
-genres.forEach((v) => {
+<script>
+  genres.forEach((v) => {
   if (occurrences[v]) {
     occurrences[v] = occurrences[v] + 1
   } else occurrences[v] = 1
@@ -282,7 +286,7 @@ array_values.slice(0,5).forEach((value) =>{
     }
     })
   </script>
-  <script>
+<!--   <script>
 const hash = window.location.hash
 .substring(1)
 .split('&')
@@ -334,6 +338,6 @@ const spoty_call = async () => {
     })
   return data
 }
-</script>
+</script> -->
 
 
