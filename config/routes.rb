@@ -19,12 +19,14 @@ Rails.application.routes.draw do
   post '/auth/spotify/callback', to: 'users#spotify'
   get  '/onboarding', to: 'pages#onboarding'
   # resources for parties, only [:new, :create, :show]
+  post '/playlists/spotify', to: 'playlists#push_to_spotify'
 
   resources :parties, only: [:new, :create, :show] do
     resources :users, only: [:index]
     resources :playlists, only: [:show, :edit, :update, :new] do
-    resources :tracks, only: [:index]
-  end
+      post 'create_on_spotify', to: 'playlists#push_to_spotify'
+      resources :tracks, only: [:index]
+    end
   end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
