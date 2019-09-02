@@ -195,4 +195,57 @@ array_values.slice(0,5).forEach((value) =>{
     }
     })
   </script>
+  <script>
+const hash = window.location.hash
+.substring(1)
+.split('&')
+.reduce(function (initial, item) {
+  if (item) {
+    var parts = item.split('=');
+    initial[parts[0]] = decodeURIComponent(parts[1]);
+  }
+  return initial;
+}, {});
+window.location.hash = '';
+
+// Set token
+let _token = hash.access_token;
+
+const authEndpoint = 'https://accounts.spotify.com/authorize';
+
+// Replace with your app's client ID, redirect URI and desired scopes
+var client_id = '929fe615ebbf4d13b48c3d7663e86a75'; // Your client id
+var client_secret = 'f0ff5a81fa524f869ef6ec165c5a9cb2'; // Your secret
+var redirect_uri = 'http://localhost:8888/callback'; // Your redirect uri
+const scopes = [
+  'user-top-read'
+];
+
+// If there is no token, redirect to Spotify authorization
+if (!_token) {
+  window.location = `${authEndpoint}?client_id=${client_id}&redirect_uri=${redirect_uri}&scope=${scopes.join('%20')}&response_type=token&show_dialog=true`;
+}
+let button = document.querySelector("#button")
+button.addEventListener("click",(event)=>{
+  console.log(spoty_call())
+})
+
+const spoty_call = async () => {
+  const data = await fetch("https://api.spotify.com/v1/playlists/1TCMnDsobX7lRPfRjevLlN/tracks", {
+      body: JSON.stringify({
+      "uris": [
+        "spotify:track:43CFDpciGFDm226POTLEXU",
+        "spotify:track:1SVqPKwkGssw1ao0Jqmx2b"
+      ]
+      }),
+      headers: {
+        'Authorization': 'Bearer ' + _token,
+        'Content-Type': 'application/json',
+        'Content-Length': '0'
+      },
+      method: "PUT"
+    })
+  return data
+}
+</script>
 
