@@ -1,7 +1,7 @@
 class Party < ApplicationRecord
   belongs_to :user, optional: true
-  has_one :playlist
-  has_many :tracks, through: :playlists
+
+  has_one :playlist, dependent: :destroy
 
   mount_uploader :photo, PhotoUploader
 

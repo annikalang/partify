@@ -5,8 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable,
          :omniauthable, omniauth_providers: %i[spotify]
 
-  has_many :parties
-  has_many :playlists, through: :parties
+  has_many :parties, dependent: :destroy
 
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
@@ -15,6 +14,7 @@ class User < ApplicationRecord
       user.image = auth.info.image
       user.display_name = auth.extra.raw_info.display_name
       user.spotify_id = auth.extra.raw_info.id
+      user.raw_data = auth
       # If you are using confirmable and the provider(s) you use validate emails,
       # uncomment the line below to skip the confirmation emails.
       # user.skip_confirmation!
