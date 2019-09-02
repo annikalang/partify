@@ -26,7 +26,8 @@ class SpotifyJob < ApplicationJob
       track_data[:valence] = (track.audio_features.valence.to_f * 100).round
       track_data[:popularity] = track.popularity
       track_data[:spotify_id] = track.id
-      track_data[:image] = track.artists.first.images.last["url"]
+      # track_data[:image] = track.artists.first.images.last["url"]
+      track_data[:image] = track.album.images[-2]["url"]
       track_data[:artist] = track.artists.first.name
       track_data[:genre] = track.artists.first.genres.first
 
