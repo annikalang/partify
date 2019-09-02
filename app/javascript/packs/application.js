@@ -1,5 +1,5 @@
 import "bootstrap";
-
+import "animate.css";
   // $( function() {
   //   $( "#slider-range" ).slider({
   //     range: true,

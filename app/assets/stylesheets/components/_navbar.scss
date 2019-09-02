@@ -1,28 +1,43 @@
 .navbar {
-  overflow: hidden;
-  position: fixed;
-  bottom: 0;
   width: 100%;
+  position: sticky !important;
+  background: black;
+  bottom: 0;
+  // // height: 100%;
+  // // background-color: $container-gray;
+  // // margin: 20px;
+  // // max-height: 20px;
+  // border-top: 1px solid white;
+  // // margin-top: 20px;
+  // overflow: hidden;
+  // position: bottom;
+  // width: 100%;
+  // margin-bottom: 0 !important;
+  // border-radius: 300px;
 }
 
 .navbarbot {
   width: 100%;
-  height: 10%;
+  // height: 100%;
   // background-color: $container-gray;
   // margin: 20px;
-  max-height: 20px;
+  // max-height: 20px;
   border-top: 1px solid white;
-  margin-top: 20px;
+  // margin-top: 20px;
+  // overflow: hidden;
+  // position: absolute;
+  // width: 100%;
+  // margin-bottom: 0 !important;
   // border-radius: 300px;
 }
 
 .navbarbot tr {
-  height: 75px;
+  height: 60px;
 }
 
 .navbarbot td {
   text-align: center;
-  height: 70px;
+  height: 60px;
   width: 25%;
   padding: 0px;
 }
@@ -30,7 +45,6 @@
 .navbarbot td:hover {
   background-color: black;
   border-color: 1px solid white;
-  color: pink;
 }
 
 .iconlink {

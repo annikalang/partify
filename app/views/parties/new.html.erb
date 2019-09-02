@@ -1,5 +1,7 @@
 <!-- #parties#new -->
-
+<head>
+    <title>PARTYSPHERE</title>
+</head>
 <%= render 'shared/dropdown' %>
 
 <div class="header">Create a Party</div>
@@ -13,7 +15,7 @@
   <div class="smallcolorbutton">
     <div class="whitebackground">
       <div>
-        <%= f.button :submit, value: "Let's Go" %>
+        <%= f.button :submit, value: "Let's Go!", data: { disable_with: "Creating Party..." } %>
       </div>
     </div>
   </div>

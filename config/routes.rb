@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   get '/components', to: 'pages#components'
   get '/auth/spotify/callback', to: 'users#profile'
   post '/auth/spotify/callback', to: 'users#spotify'
+  get  '/onboarding', to: 'pages#onboarding'
   # resources for parties, only [:new, :create, :show]
 
   resources :parties, only: [:new, :create, :show] do

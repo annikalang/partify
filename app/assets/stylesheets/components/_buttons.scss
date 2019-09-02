@@ -73,7 +73,7 @@
 }
 
 a:hover {
-  color: #1E1E1E;
+  color: white;
   text-decoration: none;
 }
 
@@ -94,26 +94,31 @@ a:hover {
   height: 63px;
   line-height: 62px;
   text-align: center;
+  color: white !important;
 }
 
  .whitebackground:hover  {
   background-image: linear-gradient(to right, #ffa500, #ff4883, #da53e0, #40a0e0);
+  color: white !important;
 }
 
 .whitebackground a {
   color: white;
   font-family: $body-font;
   font-size: 28px;
-  font-weight: 300;
+  font-weight: bold;
   font-style: normal;
 }
 
 .whitebackground a:hover {
   color: white;
+  font-weight: 300;
   text-decoration: none;
 }
 
-
+.btn {
+  color: white !important;
+}
 
 
 
