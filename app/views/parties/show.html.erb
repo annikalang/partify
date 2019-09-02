@@ -182,12 +182,12 @@ array_values.slice(0,5).forEach((value) =>{
             weight: 'bold',
             size: '10'
           },
-          formatter: (value) => {
-            return value + "%";
+          formatter: (value,context) => {
+            return  context.chart.data.labels[context.dataIndex].charAt(0).toUpperCase() + context.chart.data.labels[context.dataIndex].slice(1)  + ": " +  value + "%";
           }
         }
       }
+    }
     })
-
   </script>
 
