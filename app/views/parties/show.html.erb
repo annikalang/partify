@@ -51,6 +51,7 @@ let check = Object(genresByPopularity)
 
 var array_keys = new Array();
 var array_values = new Array();
+var final_values_array = new Array();
 
 for (var key in check) {
   array_keys.push(key);
@@ -58,14 +59,15 @@ for (var key in check) {
 }
 //
 //
-console.log(array_keys.slice(0,5));
-console.log(array_values.slice(0,5));
+array_values.slice(0,5).forEach((value) =>{
+  final_values_array.push((Math.round((value / array_values.reduce((a,b)=>(a+b),0) * 100))))
+})
   let colorHex = ['#32C5FF', '#B620E0', '#F7B500', '#808080'];
   let myChart = new Chart(ctx, {
     type: 'doughnut',
     data: {
       datasets: [{
-        data: array_values.slice(0,5),
+        data: final_values_array,
         backgroundColor: colorHex
       }],
       labels: array_keys.slice(0,5)
@@ -94,7 +96,7 @@ console.log(array_values.slice(0,5));
             size: '10'
           },
           formatter: (value) => {
-            return value;
+            return value + "%";
           }
         }
       }
