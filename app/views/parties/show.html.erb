@@ -1,3 +1,4 @@
+<div class="testestest">
   <%= render 'shared/dropdown' %>
 <head>
     <title>PARTYSPHERE</title>
@@ -34,22 +35,112 @@
         <td class="smallanalytics-text2"><%= @duration %></td>
         <td class="smallanalytics-text3">15</td>
       </tr>
-      </table>
+    </table>
+  </div>
 
   <!-- GENRE CHART -->
-  <div class="wrapper">
+  <!-- <div class="wrapper"> -->
     <div class="container d-flex flex-column justify-content-center align-items-center">
       <div class="title text-center mb-5">
       </div>
       <div class="chart-wrapper">
-        <div class="chart-container" style="position: relative; height:50vh; width:80vw">
+        <div class="chart-container" style="position: relative; height: 50vw; width:80vw">
           <canvas id="myChart"></canvas>
         </div>
       </div>
     </div>
-  </div>
+    <script>
+    let ctx = document.getElementById('myChart').getContext('2d');
+    const genres = []
+    <% @genre.each do |genre| %>
+    genres.push("<%= genre %>");
+    <% end %>
+    const occurrences = {}
 
-  <!-- BIG PARTY ANALYTICS TABLE -->
+    genres.forEach((v) => {
+    if (occurrences[v]) {
+    occurrences[v] = occurrences[v] + 1
+    }
+    else occurrences[v] = 1
+    })
+
+    const sortable = [];
+    for (let o in occurrences) {
+    sortable.push([o, occurrences[o]]);
+    }
+
+    sortable.sort(function(a, b) {
+    return b[1] - a[1];
+    });
+
+    const genresByPopularity = {}
+
+    sortable.forEach(pair => {
+    genresByPopularity[pair[0]] = pair[1]
+    })
+
+    let check = Object(genresByPopularity)
+
+    var array_keys = new Array();
+    var array_values = new Array();
+    var final_values_array = new Array();
+
+    for (var key in check) {
+    array_keys.push(key);
+    array_values.push(check[key])
+    }
+//
+//
+    array_values.slice(0,5).forEach((value)=>{
+    final_values_array.push((Math.round((value / array_values.reduce((a,b)=>(a+b),0) * 100))))
+    })
+    let colorHex = ['#32C5FF', '#B620E0', '#F7B500', '#808080'];
+    let myChart = new Chart(ctx, {
+      type: 'doughnut',
+      data: {
+        datasets: [{
+          data: final_values_array,
+          backgroundColor: colorHex
+        }],
+      labels: array_keys.slice(0,5)
+      },
+      options: {
+      layout: {
+      padding: {
+      bottom: 10
+      }
+    },
+      responsive: true,
+      legend: {
+        position: 'left',
+        display: false
+      },
+      plugins: {
+        datalabels: {
+          color: '#fff',
+          anchor: 'end',
+          align: 'start',
+          offset: -10,
+          borderWidth: 2,
+          borderColor: '#fff',
+          borderRadius: 25,
+          backgroundColor: (context) => {
+            return context.dataset.backgroundColor;
+          },
+          font: {
+            weight: 'bold',
+            size: '10'
+          },
+          formatter: (value,context) => {
+            return  context.chart.data.labels[context.dataIndex].charAt(0).toUpperCase() + context.chart.data.labels[context.dataIndex].slice(1)  + ": " +  value + "%";
+          }
+        }
+      }
+    }
+    })
+  </script>
+
+    <!-- BIG PARTY ANALYTICS TABLE -->
   <div class="bigbox">
    <table class="biganalytics">
     <tr class="biganalytics-row">
@@ -101,19 +192,13 @@
       </td>
     </tr>
   </table>
-
-
-
+</div>
+</div>
   <%= render 'shared/navbar' %>
+<!-- </div> -->
+  <!-- </div> -->
 
   <!-- JS CODE FOR GENRE CHART -->
-  <script>
-    let ctx = document.getElementById('myChart').getContext('2d');
-    const genres = []
-    <% @genre.each do |genre| %>
-    genres.push("<%= genre %>");
-  <% end %>
-  const occurrences = {}
 
 genres.forEach((v) => {
   if (occurrences[v]) {
@@ -197,4 +282,58 @@ array_values.slice(0,5).forEach((value) =>{
     }
     })
   </script>
+  <script>
+const hash = window.location.hash
+.substring(1)
+.split('&')
+.reduce(function (initial, item) {
+  if (item) {
+    var parts = item.split('=');
+    initial[parts[0]] = decodeURIComponent(parts[1]);
+  }
+  return initial;
+}, {});
+window.location.hash = '';
+
+// Set token
+let _token = hash.access_token;
+
+const authEndpoint = 'https://accounts.spotify.com/authorize';
+
+// Replace with your app's client ID, redirect URI and desired scopes
+var client_id = '929fe615ebbf4d13b48c3d7663e86a75'; // Your client id
+var client_secret = 'f0ff5a81fa524f869ef6ec165c5a9cb2'; // Your secret
+var redirect_uri = 'http://localhost:8888/callback'; // Your redirect uri
+const scopes = [
+  'user-top-read'
+];
+
+// If there is no token, redirect to Spotify authorization
+if (!_token) {
+  window.location = `${authEndpoint}?client_id=${client_id}&redirect_uri=${redirect_uri}&scope=${scopes.join('%20')}&response_type=token&show_dialog=true`;
+}
+let button = document.querySelector("#button")
+button.addEventListener("click",(event)=>{
+  console.log(spoty_call())
+})
+
+const spoty_call = async () => {
+  const data = await fetch("https://api.spotify.com/v1/playlists/1TCMnDsobX7lRPfRjevLlN/tracks", {
+      body: JSON.stringify({
+      "uris": [
+        "spotify:track:43CFDpciGFDm226POTLEXU",
+        "spotify:track:1SVqPKwkGssw1ao0Jqmx2b"
+      ]
+      }),
+      headers: {
+        'Authorization': 'Bearer ' + _token,
+        'Content-Type': 'application/json',
+        'Content-Length': '0'
+      },
+      method: "PUT"
+    })
+  return data
+}
+</script>
+
 
