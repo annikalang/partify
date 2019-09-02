@@ -23,9 +23,10 @@ Devise.setup do |config|
   # config.mailer = 'Devise::Mailer'
 
   config.omniauth :spotify, ENV['SPOTIFY_CLIENT_ID'], ENV['SPOTIFY_CLIENT_SECRET'], scope: %w(
-    playlist-read-private
     user-read-private
     user-read-email
+    playlist-modify-private
+    playlist-read-private
   ).join(' ')
   # Configure the parent class responsible to send e-mails.
   # config.parent_mailer = 'ActionMailer::Base'
