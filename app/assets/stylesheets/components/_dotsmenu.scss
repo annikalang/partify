@@ -21,10 +21,9 @@
   max-width: 98px;
   &:hover{
     background: linear-gradient(to right, #ffa500, #ff4883, #da53e0, #40a0e0, #da53e0) !important;
-    color: transparent;
+    // color: transparent;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-  // background-image: linear-gradient(to right, #ffa500, #ff4883, #da53e0, #40a0e0);
   }
 }
 
@@ -44,7 +43,6 @@
  display: none;
 }
 
-
 //startpage dots
 
 .twodots {
@@ -58,7 +56,7 @@
 }
 
 #dot1 {
-  color: white;
+  color: #cccccc;
   opacity: 0.5;
 }
 
