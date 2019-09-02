@@ -9,38 +9,36 @@ class SpotifyJob < ApplicationJob
 
     # THIS CODE GIVES BACK THE FIRST PLAYLIST OF THE USER
     first_playlist = spotify_user.playlists.first
-    first_playlist.tracks(limit:30).each do |track|
-        Track.create(
-          title: track.name,
-          playlist_id: playlist_id,
-          duration_ms: track.audio_features.duration_ms,
-          danceability: (track.audio_features.danceability.to_f * 100).round,
-          energy: (track.audio_features.energy.to_f * 100).round,
-          valence: (track.audio_features.valence.to_f * 100).round,
-          spotify_id: track.id,
-          popularity: track.popularity,
-          image: track.artists.first.images.last["url"],
-          artist: track.artists.first.name,
-          genre: track.artists.first.genres.first
-        )
 
-# THIS CODE WORKS FOR THE USER'S TOP TRACKS
-    # spotify_user.top_tracks(limit: 40, time_range: 'long_term').each do |track|
-    #   if track.audio_features.speechiness < 0.4
-    #     Track.create(
-    #       title: track.name,
-    #       playlist_id: playlist_id,
-    #       duration_ms: track.audio_features.duration_ms,
-    #       danceability: (track.audio_features.danceability.to_f * 100).round,
-    #       energy: (track.audio_features.energy.to_f * 100).round,
-    #       valence: (track.audio_features.valence.to_f * 100).round,
-    #       spotify_id: track.id,
-    #       popularity: track.popularity,
-    #       image: track.artists.first.images.last["url"],
-    #       artist: track.artists.first.name,
-    #       genre: track.artists.first.genres.first
-    #     )
+    ingest_tracks(playlist_id, first_playlist)
+  end
+
+  def ingest_tracks(playlist_id, playlist)
+    puts 'Fetching data...'
+    tracks = playlist.tracks(limit: 30).map do |track|
+      track_data = {}
+
+      track_data[:title] = track.name
+      track_data[:playlist_id] = playlist_id
+      track_data[:duration_ms] = track.audio_features.duration_ms
+      track_data[:danceability] = (track.audio_features.danceability.to_f * 100).round
+      track_data[:energy] = (track.audio_features.energy.to_f * 100).round
+      track_data[:valence] = (track.audio_features.valence.to_f * 100).round
+      track_data[:popularity] = track.popularity
+      track_data[:spotify_id] = track.id
+      track_data[:image] = track.artists.first.images.last["url"]
+      track_data[:artist] = track.artists.first.name
+      track_data[:genre] = track.artists.first.genres.first
+
+      track_data
     end
+
+    Track.create(tracks)
+
+    rescue RestClient::TooManyRequests => e
+      sleep(10)
+
+      ingest_tracks(playlist_id, playlist)
   end
 end
   # end
