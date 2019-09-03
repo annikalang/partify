@@ -14,22 +14,22 @@ class PartiesController < ApplicationController
     @genre = @party.playlist.tracks.pluck(:genre)
 
     @duration = @playlist.get_duration_hrs_and_mins
-
   end
 
   def new
     @party = Party.new
   end
+
   def create
     @user = current_user
 
     @party = Party.new(party_parameters)
     @party.user = @user
 
-    if @party.save!
+    if @party.save
       redirect_to party_path(@party)
     else
-      render "new"
+      render :new
     end
   end
 
