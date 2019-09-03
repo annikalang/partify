@@ -37,9 +37,20 @@
   <!-- PARTY DESCRIPTION -->
   <p class="paragraph"><%=@party.description%></p>
 
+  <%= form_for '', url: party_playlist_create_on_spotify_path(@party, @party.playlist), method: :post do |f| %>
+    <div class="bottom-space">
+      <div class="smallcolorbutton">
+        <div>
+        <%= f.submit "Save on Spotify", class: "whitebackground", id: "whiteback", data: { disable_with: "Saving..." } %>
+        </div>
+      </div>
+    </div>
+    <% end %>
 
   <!-- ANALYTICS -->
-  <h1 class="analytics">Party analytics</h1>
+
+  <h1 class="sub-header1">Party analytics</h1>
+
 
   <!-- SMALL PARTY ANALYTICS TABLE -->
   <div class="littlebox">
@@ -215,9 +226,4 @@
   </table>
 </div>
 
-  <%= form_for '', url: party_playlist_create_on_spotify_path(@party, @party.playlist), method: :post do |f| %>
-<%= f.submit  %>
-<% end %>
-  <%= render 'shared/navbar' %>
-<!-- </div> -->
-  <!-- </div> -->
+<%= render 'shared/navbar' %>

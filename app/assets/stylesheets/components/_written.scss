@@ -18,6 +18,24 @@
   padding-bottom: 120px;
 }
 
+.normalheader {
+  width: 100vw;
+  height: auto;
+  font-family: $headers-font;
+  font-size: 32px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: 2.23px;
+  text-align: center;
+  color: #ffffff;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 60px;
+  padding-bottom: 40px;
+}
+
 .header {
   width: 100vw;
   height: auto;
@@ -37,24 +55,6 @@
 }
 
 
-.normalheader {
-  width: 100vw;
-  height: auto;
-  font-family: $headers-font;
-  font-size: 32px;
-  font-weight: bold;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: normal;
-  letter-spacing: 2.23px;
-  text-align: center;
-  color: #ffffff;
-  margin-left: auto;
-  margin-right: auto;
-  padding-top: 60px;
-  padding-bottom: 40px;
-}
-
 .sub-header {
   width: 100vw;
   height: auto;
@@ -69,6 +69,26 @@
   color: #ffffff;
   margin-left: auto;
   margin-right: auto;
+  padding-top: 25px;
+  padding-bottom: 0px;
+}
+
+.sub-header1 {
+  width: 100vw;
+  height: auto;
+  font-family: $headers-font;
+  font-size: 32px;
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: 0.61px;
+  text-align: center;
+  color: #ffffff;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 25px;
+  padding-bottom: 30px;
   margin-top: 55px;
   margin-bottom: 25px;
 }
@@ -89,4 +109,22 @@
   margin-right: auto;
   padding-top: 20px;
   padding-bottom: 40px;
+}
+
+.username {
+  width: 100vw;
+  height: auto;
+  font-family: $headers-font;
+  font-size: 32px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: 2.23px;
+  text-align: center;
+  color: #ffffff;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
