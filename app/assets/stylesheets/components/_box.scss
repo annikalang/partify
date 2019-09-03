@@ -3,6 +3,7 @@
   margin-left: auto;
   margin-right: auto;
   padding: 0px;
+  font: $body-font;
 }
 .smallanalytics {
   // border-collapse: collapse;
@@ -20,16 +21,19 @@
   text-align: center;
   border-right: solid 1px #FFFFFF;
   color: #FFFFFF;
+  font: $body-font;
 }
 .smallanalytics-text2 {
   text-align: center;
   border-right: solid 1px #FFFFFF;
   border-left: solid 1px #FFFFFF;
   color: #FFFFFF;
+  font: $body-font;
 }.smallanalytics-text3 {
   text-align: center;
   border-left: solid 1px #FFFFFF;
   color: #FFFFFF;
+  font: $body-font;
 }
 
 //large analytics box 4x4
@@ -53,41 +57,49 @@
   max-width: 168px;
   color: #FFFFFF;
   border-right: solid 1px #FFFFFF;
+  font: $body-font;
 }
 .biganalytics-text2 {
   text-align: center;
   color: #FFFFFF;
+  font: $body-font;
 }
 .biganalytics-text3 {
   text-align: center;
   color: #FFFFFF;
   font-size: 1.9em;
   border-right: solid 1px #FFFFFF;
+  font: $body-font;
 }
 .biganalytics-text4 {
   text-align: center;
   color: #FFFFFF;
   font-size: 1.9em;
+  font: $body-font;
 }
 .biganalytics-text5 {
   text-align: center;
   color: #FFFFFF;
   border-right: solid 1px #FFFFFF;
   border-top: solid 1px #FFFFFF;
+  font: $body-font;
 }
 .biganalytics-text6 {
   text-align: center;
   color: #FFFFFF;
   border-top: solid 1px #FFFFFF;
+  font: $body-font;
 }
 .biganalytics-text7 {
   text-align: center;
   color: #FFFFFF;
   font-size: 1.9em;
   border-right: solid 1px #FFFFFF;
+  font: $body-font;
 }
 .biganalytics-text8 {
   text-align: center;
   color: #FFFFFF;
   font-size: 1.9em;
+  font: $body-font;
 }
