@@ -1,12 +1,14 @@
 class Party < ApplicationRecord
   belongs_to :user, optional: true
+  validates :photo, presence: true
+  validates :title, presence: true
+  validates :description, presence: true
 
   has_one :playlist, dependent: :destroy
 
   mount_uploader :photo, PhotoUploader
 
   after_create :create_playlist
-
 
   private
 
