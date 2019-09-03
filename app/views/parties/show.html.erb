@@ -4,7 +4,7 @@
     <title>PARTYSPHERE</title>
 </head>
   <!-- PARTY TITLE -->
-  <h1 class="header"><%=@party.title%></h1>
+  <h1 class="normalheader"><%=@party.title%></h1>
 
   <!-- PARTY PHOTO -->
   <div class="party-photo-container">
@@ -39,13 +39,13 @@
   </div>
 
   <!-- GENRE CHART -->
-  <!-- <div class="wrapper"> -->
+  <div class="wrapper">
     <div class="container d-flex flex-column justify-content-center align-items-center">
       <div class="title text-center mb-5">
       </div>
       <div class="chart-wrapper">
-        <div class="chart-container" style="position: relative; height: 40vh; width:80vw">
-          <canvas id="myChart"></canvas>
+        <div class="chart-container">
+          <canvas id="myChart" width="600"></canvas>
         </div>
       </div>
     </div>
@@ -96,13 +96,15 @@
     array_values.slice(0,5).forEach((value)=>{
     final_values_array.push((Math.round((value / array_values.reduce((a,b)=>(a+b),0) * 100))))
     })
-    let colorHex = ['#ffa500', '#ff4883', '#da53e0', '#40a0e0', '#00ffa5'];
+    let colorHex = ['#ffa500', '#ff4883', '#da53e0', '#40a0e0', '#00cc84'];
     let myChart = new Chart(ctx, {
       type: 'doughnut',
       data: {
         datasets: [{
           data: final_values_array,
-          backgroundColor: colorHex
+          backgroundColor: colorHex,
+          borderColor: colorHex,
+          borderAlign: 'center'
         }],
       labels: array_keys.slice(0,5)
       },
@@ -114,6 +116,7 @@
       }
     },
       responsive: true,
+      // maintainAspectRatio: true,
       legend: {
         // position: 'left',
         display: false
@@ -122,16 +125,11 @@
         datalabels: {
           color: '#fff',
           anchor: 'end',
-          // align: 'start',
-          // offset: -10,
-          // borderWidth: 2,
-          // borderColor: '#fff',
           borderRadius: 25,
           backgroundColor: (context) => {
             return context.dataset.backgroundColor;
           },
           font: {
-            // weight: 'bold',
             size: '10'
           },
           formatter: (value,context) => {
@@ -142,6 +140,7 @@
     }
     })
   </script>
+  </div>
 
     <!-- BIG PARTY ANALYTICS TABLE -->
   <div class="bigbox">
@@ -195,7 +194,6 @@
       </td>
     </tr>
   </table>
-</div>
 </div>
 
   <%= form_for '', url: party_playlist_create_on_spotify_path(@party, @party.playlist), method: :post do |f| %>

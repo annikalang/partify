@@ -1,32 +1,46 @@
+// 3 dots
 .dropdown {
   margin-left: auto;
   margin-right: 15px;
-  width: 45px;
+  width: 30px;
   height: 31px;
   position: relative;
 }
-.dropdown-menu.dropdown-menu-right.show {
-  width: 60% !important;
 
-}
-.dropdown-menu.show{
+.dropdown-menu.show {
+  margin: 0px;
+  padding: 0px;
+  display: block;
   background-color: #1F1F1F;
-
 }
+
 .dropdown-menu{
-  background-color: #1F1F1F;
-
+  float: left;
+  width: 50%;
 }
 
-.dropdown-item{
+.dropdown-menu a {
+  margin: 0px;
+  padding: 5px;
+  width: 100%;
+  // float: left;
+  // width: 50%;
+}
+
+.dropdown-item {
   color: white !important;
   background-color: #040404;
-  width: 60% !important;
+  margin: 0px;
+  padding: 0px;
+  // float: left;
+  // width: 50%;
+  // width: 60% !important;
+  // width: 10px;
 
   &:hover{
-    color:black !important;
-    background: linear-gradient(to right, #ffa500, #ff4883, #da53e0, #40a0e0, #da53e0) !important
-    
+    color: #1F1F1F !important;
+    background: linear-gradient(to right, #ffa500, #ff4883, #da53e0, #40a0e0) !important
+
   }
 }
 .dropdown-toggle {
@@ -37,9 +51,9 @@
   font-size: 2em;
   outline:0;
 }
-#dropdown-menu.dropdown-menu-right.show {
-  width: 98px;
-}
+// #dropdown-menu.dropdown-menu-right.show {
+//   width: 98px;
+// }
 #dropdownMenuButton.dropdown-toggle {
   padding: 0px 0px 0px 0px;
   border: none;

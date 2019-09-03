@@ -2,6 +2,7 @@
 .littlebox{
   margin-left: auto;
   margin-right: auto;
+  padding: 0px;
   font: $body-font;
 }
 .smallanalytics {
@@ -39,6 +40,7 @@
 .bigbox{
   margin-left: auto;
   margin-right: auto;
+  padding-top: 60px;
 }
 .biganalytics {
   // border-collapse: collapse;
