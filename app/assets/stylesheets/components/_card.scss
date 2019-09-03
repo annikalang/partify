@@ -10,6 +10,10 @@
   border-bottom: 1px solid grey;
 }
 
+.party-card:hover .party-text {
+  color: grey;
+}
+
 .party-image {
   width: 102px;
   height: 102px;
@@ -17,12 +21,24 @@
 }
 
 .party-info {
-  padding: 16px;
+  padding-left: 25px;
 }
 
 .party-text {
-  font-size: 16px;
+  font-size: 25px;
   margin: 0;
+  color: white;
+}
+
+.party-text:hover {
+  text-decoration: none;
+}
+
+party-text:link {
+color: #FFFFFF;
+}
+.party-text:visited {
+color: #FFFFFF;
 }
 
 // track card

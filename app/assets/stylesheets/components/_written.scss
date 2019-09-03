@@ -75,7 +75,26 @@
   color: #ffffff;
   margin-left: auto;
   margin-right: auto;
-  padding-bottom: 20px;
+  padding-top: 25px;
+  padding-bottom: 0px;
+}
+
+.sub-header1 {
+  width: 100vw;
+  height: auto;
+  font-family: $headers-font;
+  font-size: 32px;
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: 0.61px;
+  text-align: center;
+  color: #ffffff;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 25px;
+  padding-bottom: 30px;
 }
 
 .paragraph {
@@ -94,4 +113,22 @@
   margin-right: auto;
   padding-top: 20px;
   padding-bottom: 40px;
+}
+
+.username {
+  width: 100vw;
+  height: auto;
+  font-family: $headers-font;
+  font-size: 32px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: 2.23px;
+  text-align: center;
+  color: #ffffff;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 30px;
+  padding-bottom: 30px;
 }

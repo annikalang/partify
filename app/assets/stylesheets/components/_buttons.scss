@@ -1,35 +1,33 @@
 // white and transparent button
+.wt {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 20px;
+}
 
 .whitetrans {
-//   background-color: transparent;
+  background-color: transparent;
   height: 67px;
   font-family: $body-font;
   border-radius: 33.5px;
   border: solid 2px white;
   text-align: center;
   line-height: 67px;
-  margin: 0 21.5px;
-}
-
-.whitetrans:hover {
-  background-color: white;
-}
-
-.whitetrans:hover a{
-  color: #1E1E1E;
-  text-decoration: none;
-}
-
-.whitetrans a {
-  font-family: $body-font;
+  width: 293px;
+  color: white;
   font-size: 28px;
   font-weight: 300;
   font-style: normal;
   font-stretch: normal;
   line-height: normal;
   letter-spacing: 1.23px;
-  text-align: center;
-  color: white;
+}
+
+.whitetrans:hover {
+  background-color: white;
+  color: #1E1E1E;
+  text-decoration: none;
 }
 
 .spotify {
@@ -38,7 +36,6 @@
   // margin-right: auto;
   font-size: 61px;
   justify-content: space-around;
-  margin: 20px;
 }
 
 .smallwhitetrans {
@@ -81,40 +78,37 @@ a:hover {
 
 .smallcolorbutton {
   padding: 2px 2px;
-  margin-top: 110px;
-  margin: 0 41px;
+  // margin-top: 110px;
+  // margin: 0 41px;
+  width: 293px;
   float: none;
   background-image: linear-gradient(to right, #ffa500, #ff4883, #da53e0, #40a0e0);
   border-radius: 33.5px;
   height: 67px;
+  margin: 0 auto;
 }
 
 .whitebackground {
   background-image: linear-gradient(to bottom, #161616, #000000);
   border-radius: 33.5px;
+  border-color: transparent;
   height: 63px;
-  line-height: 62px;
+  margin: 0px;
+  width: 289px;
+  // line-height: 62px;
   text-align: center;
   color: white !important;
-}
-
- .whitebackground:hover  {
-  background-image: linear-gradient(to right, #ffa500, #ff4883, #da53e0, #40a0e0);
-  color: white !important;
-}
-
-.whitebackground a {
   color: white;
   font-family: $body-font;
   font-size: 28px;
   font-weight: bold;
   font-style: normal;
+  padding: 0px;
 }
 
-.whitebackground a:hover {
-  color: white;
-  font-weight: 300;
-  text-decoration: none;
+.whitebackground:hover  {
+  background-image: linear-gradient(to right, #ffa500, #ff4883, #da53e0, #40a0e0);
+  color: white !important;
 }
 
 .btn {

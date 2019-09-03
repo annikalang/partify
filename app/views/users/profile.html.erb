@@ -15,22 +15,20 @@
     </div>
 
     <!-- USER'S NAME -->
-      <h1 class="header"><%= current_user.display_name %></h1>
+      <h1 class="username"><%= current_user.display_name %></h1>
 
     <!-- CREATE PARTY BUTTON -->
     <div class="bottom-space">
     <div class="smallcolorbutton">
-      <div class="whitebackground">
-        <div>
-          <%=link_to "Create Party!", new_party_path %>
-        </div>
+      <div>
+        <%=button_to "Create Party!", new_party_path, :class=>"whitebackground", :id=> "whiteback", :method=> :get%>
       </div>
     </div>
     </div>
 
     <!-- USER'S PARTY ANALYTICS TABLE -->
   <div class="bottom-space">
-    <h1 class="sub-header">My analytics</h1>
+    <h1 class="sub-header">My Analytics</h1>
 
     <div class="bigbox">
      <table class="biganalytics">
@@ -74,28 +72,26 @@
 
     <!-- USER'S PARTIES LIST -->
   <div id="top-space">
-    <h1 class="sub-header">My parties</h1>
+    <h1 class="sub-header1">My Parties</h1>
   </div>
 
 
     <%@parties.each do |party|%>
 
     <div class="party-card">
-
       <% unless party.photo.nil? %>
-      <%= image_tag "#{party.photo}", class: "party-image"%>
+        <%= link_to party_path(party) do %>
+          <%= image_tag "#{party.photo}", class: "party-image"%>
+        <% end %>
       <% else %>
-      <%= image_tag("default_image.jpg", size: "160x100", alt: "Default Party Image", class: "party-image")%>
+        <%= link_to party_path(party) do %>
+          <%= image_tag "default_image.jpg", size: "160x100", alt: "Default Party Image", class: "party-image"%>
+        <% end %>
       <% end %>
-
       <div class="party-info">
         <%=link_to party.title, party_path(party), class: "party-text"%>
       </div>
-
     </div>
-
     <%end%>
-
   </div>
 
-<!-- </div> -->

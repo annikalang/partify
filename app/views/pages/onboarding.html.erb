@@ -13,11 +13,14 @@
       <i id="dot2" class="fas fa-circle"></i>
       <i id="dot1" class="fas fa-circle"></i>
     </div> -->
-    <div class="whitetrans">
-      <a href= "/users/auth/spotify">Log in with Spotify</a>
+    <div class="wt">
+      <%=button_to "Log In with Spotify", user_spotify_omniauth_authorize_path, :class=>"whitetrans", :method=> :get%>
     </div>
     <div class="d-flex spotify">
       <i class="fab fa-spotify"></i>
     </div>
   </body>
 </html>
+
+
+

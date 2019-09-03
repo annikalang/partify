@@ -60,6 +60,14 @@ input:focus {
   // margin-right: auto;
 }
 
+#whiteback {
+  background-color: transparent;
+  border-radius: 33.5px;
+  font-family: $body-font;
+  font-size: 30.0px;
+  border: none;
+}
+
 .field:hover {
 }
 
@@ -116,17 +124,17 @@ input[type=file] {
 }
 
 
-#new_party input[type=submit] {
-  border: 1px solid transparent;
-  font-family: $body-font;
-  font-size: 28.0px;
-  height: 63px;
-  // line-height: 62px;
-  text-align: center;
-  font-weight: 300;
-  font-style: normal;
-  vertical-align: middle;
-}
+// #new_party input[type=submit] {
+//   border: 1px solid transparent;
+//   font-family: $body-font;
+//   font-size: 28.0px;
+//   height: 63px;
+//   // line-height: 62px;
+//   text-align: center;
+//   font-weight: 300;
+//   font-style: normal;
+//   vertical-align: middle;
+// }
 
 #new_party input[type=hidden] {
   color: white;
