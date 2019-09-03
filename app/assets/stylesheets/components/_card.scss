@@ -23,7 +23,18 @@
 .party-text {
   font-size: 16px;
   margin: 0;
+  color: #FFFFFF;
 }
+.party-text:link {
+color: #FFFFFF;
+}
+.party-text:visited {
+color: #FFFFFF;
+}
+.party-text:hover {
+color: #FFFFFF;
+}
+
 
 // track card
 .track-card {
