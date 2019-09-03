@@ -5,7 +5,8 @@ class UsersController < ApplicationController
 
   def profile
     @user = current_user
-    @parties = Party.where(user_id: current_user.id)
+    @parties = Party.where(host_id: current_user.id)
+    @invitations = current_user.parties
 
     # CREATE EMPTY ARRAY TO BE FILLED WITH ALL THE AVERAGE VALUES OF ONE PARTY
     @array_danceability = []
@@ -39,5 +40,7 @@ class UsersController < ApplicationController
   end
 
   def index
+    @party = Party.find params[:party_id]
+    @guests = @party.users
   end
 end

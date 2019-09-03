@@ -98,5 +98,28 @@
       </div>
     </div>
     <%end%>
+
+     <!-- USER'S INVITATIONS -->
+    <h1 class="sub-header">My invitations</h1>
+
+
+    <%@invitations.each do |party|%>
+
+    <div class="party-card">
+
+      <% unless party.photo.nil? %>
+      <%= image_tag "#{party.photo}", class: "party-image"%>
+      <% else %>
+      <%= image_tag("default_image.jpg", size: "160x100", alt: "Default Party Image", class: "party-image")%>
+      <% end %>
+
+      <div class="party-info">
+        <%=link_to party.title, party_path(party), class: "party-text"%>
+      </div>
+
+    </div>
+
+    <%end%>
+
   </div>
 

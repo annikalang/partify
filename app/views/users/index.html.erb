@@ -1,9 +1,22 @@
 <!-- <div class="mainbodynonav"> -->
-  <h1>Hello</h1>
-  <ul>
-    <%@users.each do |user|%>
-      <li><%=user%></li>
-    <%end%>
-  </ul>
-<!-- </div> -->
+  <h1 class="header"><%= @party.title %></h1>
+  <h1 class="sub-header">Guestlist</h1>
+
+  <%= simple_form_for @party do |f| %>
+
+<div class="smallcolorbutton">
+    <div class="whitebackground">
+      <div>
+        <%= link_to "Invite friends", new_user_invitation_path(party: @party.id) %>
+      </div>
+    </div>
+  </div>
+  <% end %>
+
+ <% @guests.each do |guest| %>
+  <div class="avatar-guest">
+    <%= image_tag guest.image, class: "avatar-medium"%>
+    <p class="guest-name"> <%= guest.display_name %></p>
+  </div>
+  <% end %>
 

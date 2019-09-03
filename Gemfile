@@ -31,6 +31,8 @@ group :development, :test do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'dotenv-rails'
+  gem 'letter_opener'
 end
 
 gem "rspotify", "~> 2.6"
+gem 'devise_invitable'

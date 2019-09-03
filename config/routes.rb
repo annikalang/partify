@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   # get 'users/spotify'
   # get 'users/profile'
 
-  devise_for :users, :controllers => { :omniauth_callbacks => "callbacks" }
+  devise_for :users, :controllers => { :omniauth_callbacks => "callbacks", invitations: 'invitations' }
 
   # devise_for :users
   root to: 'pages#home'
@@ -22,6 +22,8 @@ Rails.application.routes.draw do
   post '/playlists/spotify', to: 'playlists#push_to_spotify'
 
   resources :parties, only: [:new, :create, :show] do
+    get '/join', to: 'parties#join'
+    post '/check_passcode', to: 'parties#check_passcode'
     resources :users, only: [:index]
     resources :playlists, only: [:show, :edit, :update, :new] do
       post 'create_on_spotify', to: 'playlists#push_to_spotify'

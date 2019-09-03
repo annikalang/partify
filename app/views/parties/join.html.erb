@@ -4,15 +4,9 @@
 <p class="sub-header">Enter the passcode to join</p>
 
 <div class="d-flex fill">
-  <%= simple_form_for @party do |f| %>
-  <%= f.input :passcode, as: :string %>
-  <div class="smallcolorbutton">
-    <div class="whitebackground">
-      <div>
-        <%= f.button :submit, value: "Join"%>
-      </div>
-    </div>
-  </div>
+  <%= form_tag party_check_passcode_path do %>
+    <%= text_field_tag :passcode %>
+    <%= submit_tag %>
   <% end %>
 </div>
 
