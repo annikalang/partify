@@ -1,0 +1,10 @@
+Searching 196 files for "asset-url"
+
+/Users/ximenadelacamara/code/annikalang/partysphere/app/assets/stylesheets/components/_background.scss:
+   20    // z-index: 2;
+   21
+   22:   background-image: asset-url('bluuur.png');
+   23    // background-image: url(bluuur.png);
+   24
+
+1 match in 1 file
