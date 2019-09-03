@@ -3,7 +3,7 @@
 
 @import url('https://fonts.googleapis.com/css?family=Red+Hat+Text&display=swap');
 // Define fonts for body and headers
-$body-font: 'Red Hat Text', sans-serif;
+$body-font: 'Red Hat Text', sans-serif !important;
 $headers-font: 'Red Hat Text', sans-serif;
 $body-color: #fff;
 
