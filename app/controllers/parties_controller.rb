@@ -28,10 +28,10 @@ class PartiesController < ApplicationController
     @party = Party.new(party_parameters)
     @party.host = @user
 
-    if @party.save!
+    if @party.save
       redirect_to party_path(@party)
     else
-      render "new"
+      render :new
     end
   end
 

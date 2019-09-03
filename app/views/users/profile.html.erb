@@ -15,9 +15,10 @@
     </div>
 
     <!-- USER'S NAME -->
-    <h1 class="header"><%= current_user.display_name %></h1>
+      <h1 class="header"><%= current_user.display_name %></h1>
 
     <!-- CREATE PARTY BUTTON -->
+    <div>
 
     <div class="smallcolorbutton">
       <div class="whitebackground">
@@ -27,9 +28,12 @@
       </div>
     </div>
 
-    <!-- USER'S PARTY ANALYTICS TABLE -->
+    </div>
 
-    <h1 class="sub-header">My analytics</h1>
+    <!-- USER'S PARTY ANALYTICS TABLE -->
+  <div>
+    <h1 class="sub-header">My Analytics</h1>
+     </div>
 
     <div class="bigbox">
      <table class="biganalytics">
@@ -68,10 +72,13 @@
 
       </tr>
     </table>
+
     <!-- </div> -->
 
     <!-- USER'S PARTIES LIST -->
-    <h1 class="sub-header">My parties</h1>
+  <div>
+    <h1 class="sub-header">My Parties</h1>
+  </div>
 
 
     <%@parties.each do |party|%>
