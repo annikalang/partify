@@ -33,6 +33,7 @@ group :development, :test do
   gem 'dotenv-rails'
   gem 'letter_opener'
 end
+gem 'rails_12factor'
 
 gem "rspotify", "~> 2.6"
 gem 'devise_invitable'
