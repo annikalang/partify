@@ -18,17 +18,10 @@
     <div class="track-card">
 
       <!-- SET (DEFAULT) IMAGE -->
-      <% unless track.image.nil? %>
-      <%= image_tag track.image, class: "track-image"%>
-      <% else %>
-      <%= image_tag("default_image.jpg", size: "160x100", alt: "Default Artist Image", class: "track-image")%>
-      <% end %>
 
       <!-- PRINT INFO ON TRACK TITLE AND ARTIST -->
-      <div class="track-info">
-        <h3 class="track-title"><%=track.title%></h3>
-        <p class="track-artist"><%=track.artist%></p>
-      </div>
+
+       <iframe src='https://open.spotify.com/embed/track/<%=track.spotify_id%>' width="342" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
 
       <!-- END CARD -->
     </div>

@@ -8,7 +8,7 @@ class User < ApplicationRecord
   has_many :party_guests
   has_many :parties, through: :party_guests, dependent: :destroy
 
-  has_many :hosted_parties, class_name: 'Party', foreign_key: 'host_id'
+  has_many :hosted_parties, class_name: 'Party', foreign_key: 'host_id', dependent: :destroy
   # belongs_to :party_as_guest, class_name: 'Party'
 
   def self.from_omniauth(auth, party_id = nil)

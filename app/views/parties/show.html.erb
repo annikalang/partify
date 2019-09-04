@@ -226,4 +226,90 @@
   </table>
 </div>
 
+
+  <!-- JS CODE FOR GENRE CHART -->
+  <script>
+  genres.forEach((v) => {
+  if (occurrences[v]) {
+    occurrences[v] = occurrences[v] + 1
+  } else occurrences[v] = 1
+})
+
+const sortable = [];
+for (let o in occurrences) {
+  sortable.push([o, occurrences[o]]);
+}
+
+sortable.sort(function(a, b) {
+    return b[1] - a[1];
+});
+
+const genresByPopularity = {}
+
+sortable.forEach(pair => {
+  genresByPopularity[pair[0]] = pair[1]
+})
+
+let check = Object(genresByPopularity)
+
+var array_keys = new Array();
+var array_values = new Array();
+var final_values_array = new Array();
+
+for (var key in check) {
+  array_keys.push(key);
+  array_values.push(check[key])
+}
+//
+//
+array_values.slice(0,5).forEach((value) =>{
+  final_values_array.push((Math.round((value / array_values.reduce((a,b)=>(a+b),0) * 100))))
+})
+  let colorHex = ['#32C5FF', '#B620E0', '#F7B500', '#808080'];
+  let myChart = new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+      datasets: [{
+        data: final_values_array,
+        backgroundColor: colorHex
+      }],
+      labels: array_keys.slice(0,5)
+    },
+    options: {
+      layout: {
+    padding: {
+      bottom: 10
+    }
+  },
+      responsive: true,
+      legend: {
+        position: 'left',
+        display: false
+
+      },
+      plugins: {
+        datalabels: {
+          color: '#fff',
+          anchor: 'end',
+          align: 'start',
+          offset: -10,
+          borderWidth: 2,
+          borderColor: '#fff',
+          borderRadius: 25,
+          backgroundColor: (context) => {
+            return context.dataset.backgroundColor;
+          },
+          font: {
+            weight: 'bold',
+            size: '10'
+          },
+          formatter: (value,context) => {
+            return  context.chart.data.labels[context.dataIndex].charAt(0).toUpperCase() + context.chart.data.labels[context.dataIndex].slice(1)  + ": " +  value + "%";
+          }
+        }
+      }
+    }
+    })
+  </script>
+
 <%= render 'shared/navbar' %>
