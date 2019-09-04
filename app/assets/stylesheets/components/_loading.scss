@@ -1,0 +1,83 @@
+$transition-duration: 2s;
+$path-length: 157px; // Retrieved using SVG's getTotalLength()
+
+.loader {
+  text-align: center;
+  position: fixed;
+   z-index: 99;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background: black;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+svg {
+  overflow: visible !important;
+  width: 120px;
+  height: 220px;
+
+
+  g {
+    animation: slide $transition-duration linear infinite;
+
+    &:nth-child(2) {
+      animation-delay: $transition-duration / 4;
+
+      path {
+        animation-delay: $transition-duration / 4;
+        stroke-dasharray: 0px $path-length + 1;
+        stroke-dashoffset: 1px;
+      }
+    }
+  }
+
+  path{
+    stroke: url(#gradient);
+    stroke-width: 20px;
+    stroke-linecap: round;
+    fill: none;
+    stroke-dasharray: 0 $path-length;
+    stroke-dashoffset: 0;
+    animation: escalade $transition-duration cubic-bezier(0.8, 0, 0.2, 1) infinite;
+  }
+}
+
+@keyframes slide {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(50px);
+  }
+}
+
+@keyframes escalade {
+  0% {
+    stroke-dasharray: 0 $path-length;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: $path-length - 1 $path-length;
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dasharray: $path-length - 1 $path-length;
+    stroke-dashoffset: -($path-length - 1);
+  }
+}
+
+.loader.hidden {
+   animation: fadeOut 5s;
+   animation-fill-mode: forwards;
+}
+
+@keyframes fadeOut {
+   100% {
+       opacity: 0;
+       visibility: hidden;
+  }
+}
