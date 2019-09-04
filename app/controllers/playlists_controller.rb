@@ -7,7 +7,7 @@ class PlaylistsController < ApplicationController
     @playlist = Playlist.find(params[:id])
     @playlist.update_attributes playlist_params
     @party = Party.find(params[:party_id])
-    redirect_to party_playlist_tracks_path(@party, @playlist)
+    redirect_to party_path(@party)
   end
 
   def edit
