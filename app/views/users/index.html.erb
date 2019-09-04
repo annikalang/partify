@@ -1,9 +1,15 @@
-<!-- <div class="mainbodynonav"> -->
-  <h1 class="header"><%= @party.title %></h1>
-  <h1 class="sub-header">Guestlist</h1>
+<div class="mainbodynonav">
+  <h1 class="sub-header1">
+    <%= @party.title %>
+  </h1>
 
-  <%= simple_form_for @party do |f| %>
+<div id="extrabs">
+  <h1 class="sub-header2">
+  Guestlist
+  </h1>
+</div>
 
+<%= simple_form_for @party do |f| %>
 <div class="smallcolorbutton">
     <div class="whitebackground">
       <div>
@@ -11,7 +17,8 @@
       </div>
     </div>
   </div>
-  <% end %>
+
+  <%end%>
 
  <% @guests.each do |guest| %>
   <div class="avatar-guest">
@@ -19,4 +26,3 @@
     <p class="guest-name"> <%= guest.display_name %></p>
   </div>
   <% end %>
-
