@@ -42,5 +42,6 @@ class UsersController < ApplicationController
   def index
     @party = Party.find params[:party_id]
     @guests = @party.users
+    @playlist = @party.playlist
   end
 end

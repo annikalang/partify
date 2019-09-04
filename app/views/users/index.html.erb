@@ -1,28 +1,33 @@
-<div class="mainbodynonav">
-  <h1 class="sub-header1">
-    <%= @party.title %>
-  </h1>
 
-<div id="extrabs">
-  <h1 class="sub-header2">
-  Guestlist
-  </h1>
-</div>
+<!-- <div class="mainbodynonav"> -->
+  <h1 class="normalheader"><%= @party.title %></h1>
 
-<%= simple_form_for @party do |f| %>
-<div class="smallcolorbutton">
-    <div class="whitebackground">
-      <div>
-        <%= link_to "Invite friends", new_user_invitation_path(party: @party.id) %>
-      </div>
-    </div>
+  <!-- PARTY PHOTO -->
+  <div class="party-photo-container">
+    <% unless @party.photo.nil? %>
+    <%= image_tag "#{@party.photo}", class: "party-photo-round"%>
+    <% else %>
+    <%= image_tag("default_image.jpg", alt: "Default Party Image", class: "party_photo-round")%>
+    <% end %>
   </div>
 
-  <%end%>
 
+  <h1 class="sub-header1">Guestlist</h1>
+
+    <div class="smallcolorbutton">
+      <div>
+      <%=button_to "Invite Friends", new_user_invitation_path(party: @party.id), :method=> :get, :class=>"whitebackground", :id=>"whiteback"%>
+      </div>
+    </div>
+
+<div class="guest-container">
  <% @guests.each do |guest| %>
   <div class="avatar-guest">
     <%= image_tag guest.image, class: "avatar-medium"%>
     <p class="guest-name"> <%= guest.display_name %></p>
   </div>
-  <% end %>
+
+</div>
+
+<%= render 'shared/navbar' %>
+

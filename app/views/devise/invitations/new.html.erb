@@ -1,14 +1,33 @@
- <h2> Send invitations</h2>
+ <!-- devise/invitations -->
+<div class="up">
+    <button onclick="goBack()"><i class="fas fa-chevron-left fa-2x"></i></button>
+  <%= render 'shared/dropdown' %>
+</div>
 
-<%= simple_form_for(resource, as: resource_name, url: invitation_path(resource_name), html: { method: :post }) do |f| %>
+
+<div class="header">Send Invitations:</div>
+
+
+<div class="d-flex fill">
+  <%= simple_form_for(resource, as: resource_name, url: invitation_path(resource_name), html: { method: :post }) do |f| %>
   <%= f.error_notification %>
 
-  <% resource.class.invite_key_fields.each do |field| -%>
-    <div class="form-inputs">
-      <%= f.input :party_as_guest_id, :as => :hidden, :input_html => { :value => @party } %>
+  <% resource.class.invite_key_fields.each do |field| %>
+  <div class="form-inputs">
+    <%= f.input :party_as_guest_id, :as => :hidden, :input_html => { :value => @party } %>
       <%= f.input field %>
-    </div>
+  </div>
   <% end -%>
+  <div class="smallcolorbutton" id="sm">
+    <%= f.button :submit, t("devise.invitations.new.submit_button"), class: "whitebackground", id: "whiteback" %>
+  </div>
+<% end %>
+</div>
+
+<script>
+function goBack() {
+  window.history.back();
+}
 
   <div class="form-actions">
    <span id="button"><%= f.button :submit, t("devise.invitations.new.submit_button") %></span>

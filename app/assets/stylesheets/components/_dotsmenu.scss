@@ -82,3 +82,27 @@
   color: white;
 }
 
+.up {
+  display: flex;
+
+}
+
+.up button {
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.up button:focus {
+  outline: 0;
+}
+
+.up i {
+  margin-left: 15px;
+  margin-right: auto;
+  margin-top: 20px;
+  font-size: 1.5em;
+  position: relative;
+  color: #646464;
+  cursor: pointer;
+}
+

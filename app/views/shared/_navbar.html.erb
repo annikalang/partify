@@ -4,35 +4,40 @@
   <tr>
     <!-- DASHBOARD -->
     <td class="column">
-      <i class="fas fa-chart-pie"></i>
-      <div class="iconlink">
-       <%=link_to "Dashboard", party_path(@party), class: "iconlink"%>
-     </div>
-   </a>
- </td>
+    <%=link_to party_path(@party), class: "iconlink" do%>
+      <i class="fas fa-chart-pie" id="pie"></i>
+        <div class="iconlink">
+          Dashboard
+        </div>
+      <% end %>
+    </td>
+
  <!-- MODIFICATIONS -->
  <td class="column">
-  <i class="fas fa-hat-wizard"></i>
-  <div class="iconlink">
-    <%=link_to "Modify", edit_party_playlist_path(@party, @playlist), class: "iconlink"%>
+  <%=link_to edit_party_playlist_path(@party, @playlist), class: "iconlink1" do%>
+  <i class="fas fa-hat-wizard" id="wizzard"></i>
+  <div class="iconlink1">
+    Modify
   </div>
-</a>
+<% end%>
 </td>
 <!-- TRACKS -->
 <td class="column">
-  <i class="fas fa-list-ul"></i>
-  <div class="iconlink">
-    <%=link_to "Tracks", party_playlist_tracks_path(@party, @playlist), class: "iconlink"%>
+  <%=link_to party_playlist_tracks_path(@party, @playlist), class: "iconlink2" do%>
+  <i class="fas fa-list-ul" id="tracks"></i>
+  <div class="iconlink2">
+    Tracks
   </div>
-</a>
+<%end%>
 </td>
 <!-- GUESTLIST -->
 <td class="column">
-  <i class="fas fa-users"></i>
-  <div class="iconlink">
-    <%=link_to "Guests", party_users_path(@party), class: "iconlink"%>
+  <%=link_to party_users_path(@party), class: "iconlink3" do %>
+  <i class="fas fa-users" id="guests"></i>
+  <div class="iconlink3">
+    Guests
   </div>
-</a>
+<%end%>
 </td>
 </tr>
 </table>

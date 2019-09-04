@@ -1,6 +1,7 @@
 class InvitationsController < Devise::InvitationsController
   def new
     @party = params[:party]
+    @thisparty = Party.find_by(@party)
     super
   end
 
