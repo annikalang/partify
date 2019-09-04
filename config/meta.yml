@@ -2,3 +2,4 @@ meta_product_name: "Partysphere"
 meta_title: "Partysphere - Pimp your playlist."
 meta_description: "Never take shit for your party playlist. Merge your and your guests’ favorite songs from their playlists. Modify the list by danceability, energy, valence and popularity. Export them to Spotify to listen to them immediately."
 meta_image: "cover.png" # should exist in `app/assets/images/`
+twitter_account: "@Partysphere1"
