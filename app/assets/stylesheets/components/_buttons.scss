@@ -114,80 +114,42 @@ a:hover {
   color: white !important;
 }
 
+#sm {
+  margin-top: 40px;
+}
 
+// .subbut {
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   padding-bottom: 20px;
+//   border: 1px solid white;
+// }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// // Big Color Button
-// .bigcolorbutton {
-//   text-decoration: none;
-//   font-size: 24.0px;
-//   color: rgba(242,242,242,1.0);
-//   text-align: center;
+// .btn.whitet {
+//   background-color: transparent;
+//   height: 67px;
 //   font-family: $body-font;
-// }
-
-// .bigcolorbutton:hover {
-//   text-decoration: none;
-//   color: rgba(242,242,242,1.0);
-// }
-
-// .btn-bigcolor {
-//   padding: 15px 25px;
-//   width: 250px;
+//   border-radius: 33.5px;
+//   border: solid 2px white;
 //   text-align: center;
-//   // margin: 150px 20px;
-//   border: 1px solid rgba(242,242,242,1.0);
-//   text-decoration: none;
-//   border-radius: 40px;
-//   background-image: linear-gradient(to right, #ffa500, #ff4883, #da53e0, #40a0e0);
+//   line-height: 67px;
+//   width: 293px;
+//   color: white;
+//   font-size: 28px;
+//   font-weight: 300;
+//   font-style: normal;
+//   font-stretch: normal;
+//   line-height: normal;
+//   letter-spacing: 1.23px;
+//   margin-top: 30px;
 // }
 
-// .btn-bigcolor:hover {
-//   background-image: linear-gradient(to left, #ffa500, #ff4883, #da53e0, #40a0e0);
-// }
 
 
-// // Small Color Button
-// .smallcolorbutton {
-//   padding: 2px 2px;
-//   background-image: linear-gradient(to right, #ffa500, #ff4883, #da53e0, #40a0e0);
-//   border-radius: 40px;
-//   width: 200px;
-// }
 
-// .whitebackground {
-//   // padding: 21px 76px;
-//   margin: 4px 4px;
-//   background-color: white;
-//   border-radius: 40px;
-//   text-align: center;
-//   font-family: $body-font;
-//   padding: 15px 20px;
-// }
 
-// .whitebackground a {
-//   color: #BA55D3;
-// }
 
-// .whitebackground a:hover {
-//   color: #40A0E0;
-//   text-decoration: none;
-// }
+
+
+
