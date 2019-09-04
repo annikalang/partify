@@ -36,3 +36,6 @@ end
 
 gem "rspotify", "~> 2.6"
 gem 'devise_invitable'
+
+gem 'sidekiq'
+gem 'sidekiq-failures', '~> 1.0'
