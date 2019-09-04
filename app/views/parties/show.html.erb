@@ -38,6 +38,7 @@
 
 
 <!-- loadingicon -->
+<% unless @party.playlist.danceability %>
 <div class="loader">
   <svg>
   <g>
@@ -55,6 +56,7 @@
   </defs>
 </svg>
 </div>
+<% end %>
 
 <!-- <style>
 .loader {
@@ -92,14 +94,12 @@
 <div class="loader">
    <iframe src="https://giphy.com/embed/3oEjI6SIIHBdRxXI40" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/mashable-3oEjI6SIIHBdRxXI40"></a></p>
 </div> -->
-
-<script>
-window.addEventListener("load", function () {
-   const loader = document.querySelector(".loader");
-   loader.className += " hidden"; // class "loader hidden"
-});
-</script>
-
+  <script>
+    window.addEventListener("load", function () {
+       const loader = document.querySelector(".loader");
+       loader.className += " hidden"; // class "loader hidden"
+    });
+  </script>
 
 
 
@@ -177,14 +177,12 @@ window.addEventListener("load", function () {
 
   <!-- GENRE CHART -->
   <div class="wrapper">
-    <div class="container d-flex flex-column justify-content-center align-items-center">
-      <div class="title text-center mb-5">
-      </div>
-      <div class="chart-wrapper">
-        <div class="chart-container">
-          <canvas id="myChart" width="600"></canvas>
-        </div>
-      </div>
+<!--     <div class="container d-flex flex-column justify-content-center align-items-center">
+ -->      <!-- <div class="chart-wrapper">
+        <div class="chart-container"> -->
+          <canvas id="myChart" width="800"></canvas>
+        <!-- </div>
+      </div> -->
     </div>
 
     <script>
@@ -246,13 +244,12 @@ window.addEventListener("load", function () {
       labels: array_keys.slice(0,5)
       },
       options: {
-      layout: {
-      padding: {
-      bottom: 10,
-      top: 30
-      }
-    },
-      responsive: true,
+        layout: {
+        padding: {
+        bottom: 10,
+        top: 30
+        }
+      },
       // maintainAspectRatio: true,
       legend: {
         // position: 'left',

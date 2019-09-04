@@ -71,13 +71,13 @@ svg {
 }
 
 .loader.hidden {
-   animation: fadeOut 5s;
+   animation: fadeOut 60s;
    animation-fill-mode: forwards;
 }
 
 @keyframes fadeOut {
    100% {
        opacity: 0;
-       visibility: hidden;
+       display: none;
   }
 }
