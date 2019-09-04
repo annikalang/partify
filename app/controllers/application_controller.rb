@@ -2,7 +2,6 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :authenticate_user!
   before_action :set_party_and_playlist
-
   def set_party_and_playlist
     if current_user
       if controller_name == "parties" && params[:id]
@@ -15,6 +14,6 @@ class ApplicationController < ActionController::Base
   end
 
   def default_url_options
-  { host: ENV["DOMAIN"] || "localhost:3000" }
+    { host: ENV["DOMAIN"] || "localhost:3000" }
   end
 end
