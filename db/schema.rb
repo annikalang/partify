@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_03_152123) do
+ActiveRecord::Schema.define(version: 2019_09_04_090910) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -111,5 +111,4 @@ ActiveRecord::Schema.define(version: 2019_09_03_152123) do
   add_foreign_key "party_guests", "users"
   add_foreign_key "playlists", "parties"
   add_foreign_key "tracks", "playlists"
-  add_foreign_key "users", "parties", column: "party_as_guest_id"
 end

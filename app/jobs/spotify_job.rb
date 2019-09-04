@@ -11,6 +11,8 @@ class SpotifyJob < ApplicationJob
     first_playlist = spotify_user.playlists.first
 
     ingest_tracks(playlist_id, first_playlist)
+
+    Playlist.find(playlist_id).save
   end
 
   def ingest_tracks(playlist_id, playlist)
