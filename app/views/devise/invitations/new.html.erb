@@ -11,6 +11,17 @@
   <% end -%>
 
   <div class="form-actions">
-    <%= f.button :submit, t("devise.invitations.new.submit_button") %>
+   <span id="button"><%= f.button :submit, t("devise.invitations.new.submit_button") %></span>
   </div>
 <% end %>
+
+<div id ="Invitation-submitted"></div>
+
+<script>
+let message = document.querySelector("#Invitation-submitted")
+let button = document.querySelector("#button")
+button.addEventListener("click",(event)=>{
+  event.preventDefault()
+  message.insertAdjacentHTML("beforeend",`<p>Invitation Submitted</p>`)
+})
+</script>
