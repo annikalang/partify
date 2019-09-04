@@ -87,6 +87,10 @@ a:hover {
   margin: 0 auto;
 }
 
+.smallcolorbutton:focus {
+  outline: none;
+}
+
 .whitebackground {
   background-image: linear-gradient(to bottom, #161616, #000000);
   border-radius: 33.5px;
@@ -108,6 +112,10 @@ a:hover {
 .whitebackground:hover  {
   background-image: linear-gradient(to right, #ffa500, #ff4883, #da53e0, #40a0e0);
   color: white !important;
+}
+
+.whitebackground:focus {
+  outline: none;
 }
 
 .btn {
