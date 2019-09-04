@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_02_134617) do
+ActiveRecord::Schema.define(version: 2019_09_03_152123) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,11 +19,21 @@ ActiveRecord::Schema.define(version: 2019_09_02_134617) do
     t.string "title"
     t.text "description"
     t.string "image"
-    t.bigint "user_id"
+    t.bigint "host_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "photo"
-    t.index ["user_id"], name: "index_parties_on_user_id"
+    t.string "passcode"
+    t.index ["host_id"], name: "index_parties_on_host_id"
+  end
+
+  create_table "party_guests", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "party_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["party_id"], name: "index_party_guests_on_party_id"
+    t.index ["user_id"], name: "index_party_guests_on_user_id"
   end
 
   create_table "playlists", force: :cascade do |t|
@@ -78,11 +88,28 @@ ActiveRecord::Schema.define(version: 2019_09_02_134617) do
     t.string "provider"
     t.string "uid"
     t.json "raw_data"
+    t.string "invitation_token"
+    t.datetime "invitation_created_at"
+    t.datetime "invitation_sent_at"
+    t.datetime "invitation_accepted_at"
+    t.integer "invitation_limit"
+    t.string "invited_by_type"
+    t.bigint "invited_by_id"
+    t.integer "invitations_count", default: 0
+    t.bigint "party_as_guest_id"
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["invitation_token"], name: "index_users_on_invitation_token", unique: true
+    t.index ["invitations_count"], name: "index_users_on_invitations_count"
+    t.index ["invited_by_id"], name: "index_users_on_invited_by_id"
+    t.index ["invited_by_type", "invited_by_id"], name: "index_users_on_invited_by_type_and_invited_by_id"
+    t.index ["party_as_guest_id"], name: "index_users_on_party_as_guest_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "parties", "users"
+  add_foreign_key "parties", "users", column: "host_id"
+  add_foreign_key "party_guests", "parties"
+  add_foreign_key "party_guests", "users"
   add_foreign_key "playlists", "parties"
   add_foreign_key "tracks", "playlists"
+  add_foreign_key "users", "parties", column: "party_as_guest_id"
 end

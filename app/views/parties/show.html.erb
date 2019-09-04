@@ -2,9 +2,28 @@
   <%= render 'shared/dropdown' %>
 <head>
     <title>PARTYSPHERE</title>
+    <style type="text/css">
+  .analytics {
+  width: 100vw;
+  height: auto;
+  font-family: $headers-font;
+  font-size: 32px;
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: 0.61px;
+  text-align: center;
+  color: #ffffff;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  }
+    </style>
 </head>
   <!-- PARTY TITLE -->
-  <h1 class="header"><%=@party.title%></h1>
+  <h1 class="normalheader"><%=@party.title%></h1>
 
   <!-- PARTY PHOTO -->
   <div class="party-photo-container">
@@ -18,9 +37,20 @@
   <!-- PARTY DESCRIPTION -->
   <p class="paragraph"><%=@party.description%></p>
 
+  <%= form_for '', url: party_playlist_create_on_spotify_path(@party, @party.playlist), method: :post do |f| %>
+    <div class="bottom-space">
+      <div class="smallcolorbutton">
+        <div>
+        <%= f.submit "Save on Spotify", class: "whitebackground", id: "whiteback", data: { disable_with: "Saving..." } %>
+        </div>
+      </div>
+    </div>
+    <% end %>
 
   <!-- ANALYTICS -->
-  <h1 class="sub-header">Party analytics</h1>
+
+  <h1 class="sub-header1">Party analytics</h1>
+
 
   <!-- SMALL PARTY ANALYTICS TABLE -->
   <div class="littlebox">
@@ -39,16 +69,17 @@
   </div>
 
   <!-- GENRE CHART -->
-  <!-- <div class="wrapper"> -->
+  <div class="wrapper">
     <div class="container d-flex flex-column justify-content-center align-items-center">
       <div class="title text-center mb-5">
       </div>
       <div class="chart-wrapper">
-        <div class="chart-container" style="position: relative; height: 50vw; width:80vw">
-          <canvas id="myChart"></canvas>
+        <div class="chart-container">
+          <canvas id="myChart" width="600"></canvas>
         </div>
       </div>
     </div>
+
     <script>
     let ctx = document.getElementById('myChart').getContext('2d');
     const genres = []
@@ -90,45 +121,45 @@
     array_values.push(check[key])
     }
 //
+
 //
     array_values.slice(0,5).forEach((value)=>{
     final_values_array.push((Math.round((value / array_values.reduce((a,b)=>(a+b),0) * 100))))
     })
-    let colorHex = ['#32C5FF', '#B620E0', '#F7B500', '#808080'];
+    let colorHex = ['#ffa500', '#ff4883', '#da53e0', '#40a0e0', '#00cc84'];
     let myChart = new Chart(ctx, {
       type: 'doughnut',
       data: {
         datasets: [{
           data: final_values_array,
-          backgroundColor: colorHex
+          backgroundColor: colorHex,
+          borderColor: colorHex,
+          borderAlign: 'center'
         }],
       labels: array_keys.slice(0,5)
       },
       options: {
       layout: {
       padding: {
-      bottom: 10
+      bottom: 10,
+      top: 30
       }
     },
       responsive: true,
+      // maintainAspectRatio: true,
       legend: {
-        position: 'left',
+        // position: 'left',
         display: false
       },
       plugins: {
         datalabels: {
           color: '#fff',
           anchor: 'end',
-          align: 'start',
-          offset: -10,
-          borderWidth: 2,
-          borderColor: '#fff',
           borderRadius: 25,
           backgroundColor: (context) => {
             return context.dataset.backgroundColor;
           },
           font: {
-            weight: 'bold',
             size: '10'
           },
           formatter: (value,context) => {
@@ -139,6 +170,7 @@
     }
     })
   </script>
+  </div>
 
     <!-- BIG PARTY ANALYTICS TABLE -->
   <div class="bigbox">
@@ -193,6 +225,7 @@
     </tr>
   </table>
 </div>
+<<<<<<< HEAD
 </div>
 
   <%= form_for '', url: party_playlist_create_on_spotify_path(@party, @party.playlist), method: :post do |f| %>
@@ -289,3 +322,5 @@ array_values.slice(0,5).forEach((value) =>{
     }
     })
   </script>
+
+<%= render 'shared/navbar' %>

@@ -1,23 +1,28 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  devise :database_authenticatable, :registerable,
+  devise :invitable, :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
-         :omniauthable, omniauth_providers: %i[spotify]
+         :omniauthable, :invitable, omniauth_providers: %i[spotify]
 
-  has_many :parties, dependent: :destroy
+  has_many :party_guests
+  has_many :parties, through: :party_guests, dependent: :destroy
 
-  def self.from_omniauth(auth)
-    where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
+  has_many :hosted_parties, class_name: 'Party', foreign_key: 'host_id'
+  # belongs_to :party_as_guest, class_name: 'Party'
+
+  def self.from_omniauth(auth, party_id = nil)
+    user = where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.email = auth.info.email
       user.password = Devise.friendly_token[0, 20]
       user.image = auth.info.image
       user.display_name = auth.extra.raw_info.display_name
       user.spotify_id = auth.extra.raw_info.id
       user.raw_data = auth
-      # If you are using confirmable and the provider(s) you use validate emails,
-      # uncomment the line below to skip the confirmation emails.
-      # user.skip_confirmation!
     end
+
+    user.parties.push Party.find(party_id) if party_id
+
+    user
   end
 end

@@ -1,0 +1,14 @@
+
+<div class="header">You have been invited to <%= @party.title %> by <%= @party.user.display_name %></div>
+
+<p class="sub-header">Enter the passcode to join</p>
+
+<div class="d-flex fill">
+  <%= form_tag party_check_passcode_path do %>
+    <%= text_field_tag :passcode %>
+    <%= submit_tag %>
+  <% end %>
+</div>
+
+
+
