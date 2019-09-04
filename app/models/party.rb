@@ -20,7 +20,9 @@ class Party < ApplicationRecord
 
   def create_playlist
     self.playlist = Playlist.create!(party_id: self.id)
+
     SpotifyJob.perform_later(self.playlist.id, self.host.spotify_id)
+
     self.playlist.save
   end
 end
