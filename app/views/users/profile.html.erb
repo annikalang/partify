@@ -13,7 +13,7 @@
     <div class="avatar-user">
 
       <% unless current_user.image.nil? %>
-      <%= image_tag current_user.image, class: "profile"%>
+      <%= image_tag current_user.image, class: "profile", id:"centered"%>
       <% else %>
       <%= image_tag("default_image.jpg", size: "160x100", alt: "Default User Image", class: "profile")%>
       <% end %>
