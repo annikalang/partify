@@ -1,38 +1,24 @@
-
 <head>
     <title>PARTYSPHERE</title>
 </head>
+<%= render 'shared/dropdown' %>
+<p class="normalheader2"><%=@party.title%></p>
+<p class="normalheader3">Tracks</p>
 
-  <%= render 'shared/dropdown' %>
+<div class="tracks-container">
+  <!-- LOOP OVER EACH TRACK OF PLAYLIST -->
+  <%@tracks.each do |track| %>
 
+  <!-- CREATE A CARD -->
+  <div class="track-card">
 
-  <p class="normalheader"><%=@party.title%></p>
-  <p class="sub-header">Tracks</p>
+    <!-- PRINT INFO ON TRACK TITLE AND ARTIST -->
+    <iframe src='https://open.spotify.com/embed/track/<%=track.spotify_id%>' width="342" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
 
-  <div class="tracks-container">
-
-    <!-- LOOP OVER EACH TRACK OF PLAYLIST -->
-    <%@tracks.each do |track| %>
-
-    <!-- CREATE A CARD -->
-    <div class="track-card">
-
-      <!-- SET (DEFAULT) IMAGE -->
-
-      <!-- PRINT INFO ON TRACK TITLE AND ARTIST -->
-
-       <iframe src='https://open.spotify.com/embed/track/<%=track.spotify_id%>' width="342" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-
-      <!-- END CARD -->
+    <!-- END CARD -->
     </div>
 
     <!-- END LOOP -->
     <%end%>
-
-
   </div>
   <%= render 'shared/navbar' %>
-
-
-
-
