@@ -32,10 +32,42 @@
   color: #ffffff;
   margin-left: auto;
   margin-right: auto;
-  padding-top: 60px;
-  padding-bottom: 40px;
+  padding-top: 30px;
+  padding-bottom: 14px;
 }
 
+.normalheader2 {
+  width: 100vw;
+  height: auto;
+  font-family: $headers-font;
+  font-size: 32px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: 2.23px;
+  text-align: center;
+  color: #ffffff;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 30px;
+  padding-bottom: 4px;
+}
+.normalheader3 {
+  width: 100vw;
+  height: auto;
+  font-family: $headers-font;
+  font-size: 32px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: 2.23px;
+  text-align: center;
+  color: #ffffff;
+  margin-left: auto;
+  margin-right: auto;
+}
 .header {
   width: 100vw;
   height: auto;
@@ -50,8 +82,8 @@
   color: #ffffff;
   margin-left: auto;
   margin-right: auto;
-  padding-top: 60px;
-  padding-bottom: 60px;
+  padding-top: 30px;
+  padding-bottom: 22px;
 }
 
 
@@ -69,8 +101,8 @@
   color: #ffffff;
   margin-left: auto;
   margin-right: auto;
-  padding-top: 25px;
-  padding-bottom: 0px;
+  padding-top: 35px;
+  padding-bottom: 22px;
 }
 
 .sub-header1 {
@@ -87,10 +119,8 @@
   color: #ffffff;
   margin-left: auto;
   margin-right: auto;
-  padding-top: 75px;
-  padding-bottom: 30px;
-  margin-top: 40px;
-  margin-bottom: 25px;
+  margin-top: 35px;
+  margin-bottom: 30px;
 }
 .sub-header2 {
   width: 100vw;
@@ -106,9 +136,44 @@
   color: #ffffff;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 30px;
-  margin-bottom: 15px;
+  margin-top: 35px;
+  margin-bottom: 30px;
 }
+.sub-header3 {
+  width: 100vw;
+  height: auto;
+  font-family: $headers-font;
+  font-size: 32px;
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: 0.61px;
+  text-align: center;
+  color: #ffffff;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 30px;
+}
+
+.sub-header4 {
+  width: 100vw;
+  height: auto;
+  font-family: $headers-font;
+  font-size: 32px;
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: 0.61px;
+  text-align: center;
+  color: #ffffff;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
 .paragraph {
   width: 100vw;
   height: auto;
@@ -124,7 +189,24 @@
   margin-left: auto;
   margin-right: auto;
   padding-top: 20px;
-  padding-bottom: 40px;
+  padding-bottom: 19px;
+}
+.paragraph2 {
+  width: 100vw;
+  height: auto;
+  font-family: $headers-font;
+  font-size: 16px;
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: 1.23px;
+  text-align: center;
+  color: #ffffff;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  margin-bottom: 9px;
 }
 
 .username {
@@ -141,8 +223,8 @@
   color: #ffffff;
   margin-left: auto;
   margin-right: auto;
-  padding-top: 30px;
-  padding-bottom: 30px;
+  padding-top: 25px;
+  padding-bottom: 27px;
 }
 #extrabs {
   margin-bottom: 25px;

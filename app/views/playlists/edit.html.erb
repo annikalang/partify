@@ -1,36 +1,19 @@
 
 <head>
-    <title>PARTYSPHERE</title>
+  <title>PARTYSPHERE</title>
+    <style type="text/css">
+      #lowss {
+        margin-bottom: 40px;
+      }
+    </style>
 </head>
 <!-- <div class="mainbodywithnav"> -->
-
   <%= render 'shared/dropdown' %>
-
   <h1 class="header"><%= @party.title %></h1>
-  <h2 class="sub-header">Modifications</h2>
-
-
-  <!-- HIDDEN FORM (ONLY BUTTON IS SEEN) -->
-
-  <%= form_for @playlist, url: party_playlist_path(@party,@playlist), method: :patch do |f| %>
-  <%= f.hidden_field :min_energy, id: 'min_energy' %>
-  <%= f.hidden_field :max_energy, id: 'max_energy' %>
-  <%= f.hidden_field :min_danceability, id: 'min_danceability' %>
-  <%= f.hidden_field :max_danceability, id: 'max_danceability' %>
-  <%= f.hidden_field :min_valence, id: 'min_valence' %>
-  <%= f.hidden_field :max_valence, id: 'max_valence' %>
-  <%= f.hidden_field :min_popularity, id: 'min_popularity' %>
-  <%= f.hidden_field :max_popularity, id: 'max_popularity' %>
-  <div class="smallcolorbutton">
-    <%= f.submit "Save", class: "whitebackground", id: "whiteback"%>
-  </div>
-  <% end %>
-
+  <h2 class="sub-header3">Modifications</h2>
 
   <!-- Energy html - jQuery -->
-
   <div class="slider-container">
-
     <div class="individual-slider">
       <p>
         <label for="display">Energy</label>
@@ -161,7 +144,22 @@
         });
       </script>
     </div>
-
+      <!-- HIDDEN FORM (ONLY BUTTON IS SEEN) -->
+<div id="lowss">
+<%= form_for @playlist, url: party_playlist_path(@party,@playlist), method: :patch do |f| %>
+  <%= f.hidden_field :min_energy, id: 'min_energy' %>
+  <%= f.hidden_field :max_energy, id: 'max_energy' %>
+  <%= f.hidden_field :min_danceability, id: 'min_danceability' %>
+  <%= f.hidden_field :max_danceability, id: 'max_danceability' %>
+  <%= f.hidden_field :min_valence, id: 'min_valence' %>
+  <%= f.hidden_field :max_valence, id: 'max_valence' %>
+  <%= f.hidden_field :min_popularity, id: 'min_popularity' %>
+  <%= f.hidden_field :max_popularity, id: 'max_popularity' %>
+  <div class="smallcolorbutton">
+    <%= f.submit "Save", class: "whitebackground", id: "whiteback"%>
+  </div>
+  <% end %>
+  </div>
   </div>
 
 <!-- </div> -->
