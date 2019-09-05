@@ -31,7 +31,7 @@
   color: white;
 }
 
-input:focus {
+.new_party input:focus {
   outline: none;
 }
 
@@ -54,6 +54,7 @@ input:focus {
   // text-align: left;
   // line-height: 21.0px;
   border: 2px solid white;
+  color: white;
   // padding-left: 10px;
   // padding: 20px;
   // margin: 0 41px;
