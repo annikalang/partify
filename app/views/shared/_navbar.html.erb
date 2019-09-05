@@ -4,7 +4,7 @@
   <tr>
     <!-- DASHBOARD -->
     <td class="column">
-    <%=link_to party_path(@party), class: "iconlink" do%>
+    <%=link_to party_path(@party), class: "iconlink anchor-link" do%>
       <i class="fas fa-chart-pie" id="pie"></i>
         <div class="iconlink">
           Dashboard
@@ -14,25 +14,27 @@
 
  <!-- MODIFICATIONS -->
  <td class="column">
-  <%=link_to edit_party_playlist_path(@party, @playlist), class: "iconlink1" do%>
+  <%=link_to edit_party_playlist_path(@party, @playlist), class: "iconlink1 anchor-link" do%>
   <i class="fas fa-hat-wizard" id="wizzard"></i>
   <div class="iconlink1">
     Modify
   </div>
 <% end%>
 </td>
+
 <!-- TRACKS -->
 <td class="column">
-  <%=link_to party_playlist_tracks_path(@party, @playlist), class: "iconlink2" do%>
+  <%=link_to party_playlist_tracks_path(@party, @playlist), class: "iconlink2 anchor-link" do%>
   <i class="fas fa-list-ul" id="tracks"></i>
   <div class="iconlink2">
     Tracks
   </div>
 <%end%>
 </td>
+
 <!-- GUESTLIST -->
 <td class="column">
-  <%=link_to party_users_path(@party), class: "iconlink3" do %>
+  <%=link_to party_users_path(@party), class: "iconlink3 anchor-link" do %>
   <i class="fas fa-users" id="guests"></i>
   <div class="iconlink3">
     Guests
