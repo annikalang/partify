@@ -264,7 +264,7 @@
             return context.dataset.backgroundColor;
           },
           font: {
-            size: '10'
+            size: '12',
           },
           formatter: (value,context) => {
             return  context.chart.data.labels[context.dataIndex].charAt(0).toUpperCase() + context.chart.data.labels[context.dataIndex].slice(1)  + ": " +  value + "%";
