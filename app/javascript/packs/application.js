@@ -1,5 +1,6 @@
 import "bootstrap";
 import "animate.css";
+import { highlighter } from '../plugins/navbar_highlighter';
   // $( function() {
   //   $( "#slider-range" ).slider({
   //     range: true,
@@ -14,3 +15,5 @@ import "animate.css";
   //   $( "#slider_range" ).val($( "#slider-range" ).slider( "values", 0 ) + "%" +
   //     " - " + $( "#slider-range" ).slider( "values", 1 ) + "%");
   // } );
+
+highlighter();
