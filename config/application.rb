@@ -5,7 +5,7 @@ require 'rails/all'
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
-RSpotify::authenticate("929fe615ebbf4d13b48c3d7663e86a75", "f0ff5a81fa524f869ef6ec165c5a9cb2")
+RSpotify::authenticate(ENV['SPOTIFY_CLIENT_ID'], ENV['SPOTIFY_CLIENT_SECRET'])
 
 module Partify
   class Application < Rails::Application
