@@ -62,6 +62,8 @@
             min: 0,
             max: 100,
             values: [<%=(@tracks.minimum(:danceability))%>, <%=(@tracks.maximum(:danceability))%>],
+            // try this to put the sliders on the new values
+            // values: [<%=(@playlist.min_danceability))%>, <%=(@playlist.max_danceability))%>],
             slide: function(event, danceability) {
               const minDanceability = danceability.values[0]
               const maxDanceability = danceability.values[1]
