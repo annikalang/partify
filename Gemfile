@@ -17,7 +17,7 @@ gem 'uglifier'
 gem 'webpacker'
 gem 'omniauth-spotify', '>= 0.0.13'
 gem 'cloudinary', '~> 1.9.1'
-gem 'carrierwave', '~> 1.2'
+gem 'carrierwave', '~> 1.3'
 gem 'jquery-ui-rails'
 
 group :development do
